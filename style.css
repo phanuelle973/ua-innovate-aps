@@ -41,10 +41,10 @@ p{
 	z-index:100;
 }
 	
-.bar{
+.bar {
 	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.45);
 	height:70px;
-	float:left;
+	/* float:left; */
 	color:white;;
 	display:inline-block;
 	z-index:100;
