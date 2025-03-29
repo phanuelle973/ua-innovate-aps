@@ -2385,6 +2385,15 @@ hr.budgetAlertsHR {
 .moneyBarContainer .onlyScheduledOutTab .tabs {
     left: 20px;
 }
+.moneyBarContainer .onlylockboxTab {
+    background: none !important;
+}
+.moneyBarContainer .onlylockboxTab .scheduledOutWraparound {
+    display: none;
+}
+.moneyBarContainer .onlylockboxTab .tabs {
+    left: 20px;
+}
 .moneyBarContainer .largeScheduledOut .freeTab {
     display: none;
 }
@@ -2454,7 +2463,10 @@ hr.budgetAlertsHR {
     padding: 0 !important;
 }
 .moneyBarContainer.smallFormFactor .tab.scheduledOutTab, .moneyBarContainer .thin-bar .tab.scheduledOutTab {
-    color: #e76f32;
+    color: #e76f32; 
+}
+.moneyBarContainer.smallFormFactor .tab.lockboxTab, .moneyBarContainer .thin-bar .tab.lockboxTab {
+    color: #e73232; 
 }
 .moneyBarContainer.smallFormFactor .tab.freeTab, .moneyBarContainer .thin-bar .tab.freeTab {
     color: #8abc54;
