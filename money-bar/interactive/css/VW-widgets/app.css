@@ -2075,6 +2075,16 @@ hr.budgetAlertsHR {
     right: 0;
     min-width: 90px;
 }
+.moneyBarContainer .moneybar-tabs .tabs .lockboxTab {
+    background-color: #ea2727;
+    background: -webkit-linear-gradient(top,  #ea2727 0,  #e91e1e 100%);
+    background: linear-gradient(to bottom,  #ea2727 0,  #e91e1e 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ea2727',  endColorstr='#e91e1e',  GradientType=0);
+    text-align: left;
+    position: absolute;
+    right: 0;
+    min-width: 90px;
+}
 .moneyBarContainer .moneybar-tabs .tabs .scheduledOutTab .dangerDay {
     display: inline-block;
     padding-right: 10px;
