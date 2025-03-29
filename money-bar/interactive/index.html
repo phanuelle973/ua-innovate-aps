@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Start Page</title>
+    <link href="css/VW-widgets/app.css" rel="stylesheet">
+    <link href="css/VW-widgets/app-blessed1.css" rel="stylesheet">
+    <link href="css/jquery-ui.css" rel="stylesheet">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <style>
+        @font-face {
+            font-family: 'PNC Sans';
+            src: url('css/fonts/PNCSans-Regular.otf') format('ttf'),
+                url('css/fonts/PNCSans-Regular.otf') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            background-color: transparent;
+        }
+
+        .flush.full {
+            width: 750px !important;
+            margin: auto;
+        }
+
+        .stacked.reserveBal {
+            top: 35px !important;
+            left: -170px !important;
+        }
+
+        .stacked.spendBal {
+            top: 5px !important;
+            left: -252px !important;
+        }
+
+        .stacked span {
+            display: inline !important;
+            padding-left: 10px;
+            position: absolute;
+            top: 0;
+        }
+
+        #Container {
+            padding: 135px 0;
+            margin: 0;
+            width: 80%;
+            background-color: transparent;
+        }
+
+        .plusMinus {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 27px;
+            height: 27px;
+            background-image: url(img/plus-button.png);
+            background-size: cover;
+            opacity: 0.8;
+            font-size: 10px;
+            text-align: center;
+            font-family: "FontAwesome";
+            transition: all 0.2s;
+            transform: scale(1.5);
+            transform-origin: 0;
+        }
+
+        /* Bubble modals for VW Widgets */
+
+        .bubble {
+            color: white;
+            border-radius: 10px;
+            opacity: 0;
+            height: auto;
+            width: 80px;
+            padding: 6px;
+            font-size: 10px;
+            transition: opacity 0.6s ease-out;
+            border: 1px solid white;
+        }
+
+        .open-bubble {
+            opacity: 1;
+            position: absolute;
+            z-index: 100000;
+            width: 135px;
+            box-sizing: border-box;
+            height: 70px;
+            text-align: left;
+            border-radius: 6px;
+            font-size: 10px;
+            font-family: "PNC Sans";
+            font-weight: normal;
+            position: absolute;
+            top: -88px;
+            left: -8px;
+            background: rgb(0, 150, 214);
+            padding: 10px;
+            border: none;
+        }
+
+        .open-bubble.plusMinus::before {
+            display: none;
+        }
+
+        .plusMinus span {
+            display: block;
+            position: absolute;
+            height: 27px;
+            width: 27px;
+            border-radius: 50%;
+            text-align: center;
+            box-sizing: border-box;
+            font-size: 27px;
+            line-height: 16px;
+            bottom: -7px;
+            left: -7px;
+            font-size: 20px;
+            font-weight: bold;
+            background-image: url(img/minus-button.png);
+            background-size: 27px 27px;
+        }
+
+        /* Modal Styling */
+
+        .transferBubble {
+            position: absolute;
+            top: 270px;
+            left: 200px;
+            width: 350px;
+            height: 210px;
+            padding: 2em;
+            box-shadow: 1px 5px 10px 5px rgba(0, 0, 0, 0.3);
+            font-size: 14px;
+            background: white;
+            z-index: 1112;
+        }
+
+        .transferBubble h1 {
+            font-size: 20px;
+            color: #c63;
+            font-weight: bold;
+            font-family: "PNC Sans";
+            text-transform: uppercase;
+        }
+
+        .transferBubble button {
+            color: white;
+        }
+
+        .cancel {
+            padding: 5px 15px 5px 13px;
+            border-left: 1px solid #333;
+            margin-top: .5em;
+            margin-left: 1em;
+
+        }
+
+        .transferBubble:after,
+        .transferBubble:before {
+            bottom: 100%;
+            left: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+        }
+
+        .transferBubble:after {
+            border-color: transparent;
+            border-bottom-color: white;
+            border-width: 8px;
+            margin-left: -8px;
+        }
+
+        .transferBubble:before {
+            border-color: rgba(194, 225, 245, 0);
+            border-width: 8px;
+            margin-left: -8px;
+        }
+
+        #blocker {
+            height: 768px;
+            width: 1024px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1111;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="Container">
+
+        <section class="flush full ">
+            <div moneybar-slider="">
+                <div class="moneyBarContainer">
+                    <p class="freeBalance">Free Balance: <span>$1,076.14</span></p>
+                    <div class="moneybar-tabs">
+                        <div class="scheduledOut hasSavingsList" style="width: 17.3009%;">
+                            <div class="tabs">
+                                <div class="tab scheduledOutTab">
+                                    <div class="dangerDay">
+                                    </div>
+                                    <div>Scheduled Out
+                                        <span>$1,040.00</span>
+                                        <div class="plusMinus" data-text="1"></div>
+
+                                    </div>
+                                </div>
+                                <div class="tab freeTab  moneybarFreeAmount">Free<span>$1,076.14</span>
+                                    <div class="plusMinus" data-text="2"></div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="setAside" style="width: 47.411%;">
+                            <div class="tabs">
+                                <div class="tab setAsideTab">
+                                    Savings List <span>$2,850.00</span>
+                                    <div class="plusMinus" data-text="3"></div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wraps">
+                        <div class="wrap scheduledOutWraparound" style="width: 17.3009%;"></div>
+                        <div class="wrap setAsideWraparound" style="width: 47.411%;"></div>
+                    </div>
+                    <div class="mySlider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                        <div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min"
+                            style="width: 35.2029%;"></div>
+                        <div class="scheduledOut" style="width: 17.3009%;">
+                        </div>
+                        <div class="setAside " ng-style="setAsideWidth"
+                            ng-class="{onlyScheduledOutTab:scheduledOutAmount <= 0}"
+                            ng-show="!dangerDayReserve &amp;&amp; setAsideAmount > 0" style="width: 47.411%;">
+                        </div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#"
+                            style="left: 35.2029%;">
+                            <div class=""
+                                ng-class="{'slider-left-side': moneybarVal < 15, 'slider-right-side': moneybarVal > 85}">
+                                <div class="sliderArrows">
+                                    <span class="fa fa-caret-left"></span><span class="fa fa-caret-right"></span>
+                                </div>
+                                <div class="balance spendBal">Spend <span>$2,116.14</span></div>
+                                <div class="balance reserveBal">Reserve <span>$3,895.12</span></div>
+
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+    </div>
+    </div>
+    </section>
+    </div>
+
+
+
+    </div>
+
+    <!--bubble popups for the widgets-->
+    <div class="bubble" data-text="1">
+        View Scheduled Out money allocated for bills and other payments
+        <br>
+        <br>
+        <br>
+        <span></span>
+    </div>
+
+    <div class="bubble" data-text="2">
+        See how much you have Free after your bills are accounted for
+        <br>
+        <br><br>
+        <span></span>
+    </div>
+
+    <div class="bubble" data-text="3">
+        Keep tabs on your Reserve Wish List total in your Savings List
+        <span></span>
+    </div>
+    <script src="../JS/jquery-2.0.0.min.js"></script>
+    <script src="../JS/jquery-ui.min.js"></script>
+    <script src="../JS/jquery.ui.touch-punch.min.js"></script> >
+    <script type="text/javascript">
+        var oldPos;
+        var spendBal = "$2116.14";
+        var reserveBal = "$3,895.12";
+        var currPos, transfer, currFree, savings;
+        $('.ui-slider-handle').on("mouseup touchend", function () {
+            reserveBal = parseFloat($('.reserveBal span').html().replace("$", "").replace(",", ""));
+            spendBal = parseFloat($('.spendBal span').html().replace("$", "").replace(",", ""));
+        });
+
+        $('.mySlider').slider();
+        $('.mySlider').slider({
+            value: 37,
+            start: function (event, ui) {
+                oldPos = ui.value;
+                return oldPos;
+            },
+            slide: function (event, ui) {
+                var currPos = ui.value;
+                $('.ui-slider-range').css('width', currPos + '%');
+                //stack the spend and reserve amounts when space is getting low on the right or left
+                if (currPos > 85) {
+                    $('.balance').addClass("stacked")
+                }
+                else if (currPos < 85) {
+                    $('.balance').removeClass("stacked")
+                }
+                //stop the slider from going into the Scheduled Out area
+                if (ui.value < 19.05) {
+                    return false;
+                }
+            },
+            stop: function (event, ui) {
+                //these will be set at the time of modal creation
+                var XferAmount, snippet, modalPosX;
+                //check for actual movement
+                if (ui.value == oldPos) {
+                    return false;
+                }
+                //this if statement is here because sometimes, for unknown reasons, the mouseup event to update the values isn't going through. This will catch and fix when that happens
+                if (isNaN(spendBal)) {
+                    reserveBal = parseFloat(reserveBal.replace("$", "").replace(",", ""));
+                    spendBal = parseFloat(spendBal.replace("$", "").replace(",", ""));
+                }
+                //some problems with the reserve being off-screen at the sizes the slider displays at on iOS, but still having a positive value.
+                if (ui.value > 97) {
+                    spendBal = spendBal + reserveBal;
+                    reserveBal = 0;
+                }
+                //we could hardcode this at first but it's going to change, so grab the left position - we want percent because it's easier to calculate the delta this way
+                var newPos = $(".mySlider .ui-slider-handle").attr("style");
+                newPos = newPos.replace("left: ", "");
+                newPos = parseInt(newPos);
+                //get the percentage of change in balances
+                var change = (newPos - oldPos) * .01;
+                //total is (durr) the total amount in all accounts, used as the basis for computations.
+                var total = 6011.26;
+                //addit is total amount to increment the relevant balance by, up for one and down for the other
+                var addit = (total * change);
+                //parseFloat, toFixed, toString, and slice are just to format raw digits for display and chop up display strings for computation
+                reserveBal = parseFloat(reserveBal);
+                reserveBal = reserveBal - addit;
+                reserveBal = reserveBal.toFixed(2);
+                //the following clause is necessary because on iOS, the touch interface will allow drags that go past the hard stop before snapping back; this mucks with the values :(
+                if (reserveBal <= 0) {
+                    reserveBal = 0;
+                }
+                //adjust the Savings List amount if reserve is depleted; don't want this to grow past the original amount, though. 2850 is the inital value inherited from VW Angular Demo.
+                if (reserveBal < 2850) {
+                    savings = reserveBal;
+                }
+                else {
+                    savings = parseFloat($('.setAsideTab span').html().replace("$", "").replace(",", "")).toFixed(2);
+                    if (reserveBal > savings) {
+                        savings = "2,850.00";
+                    }
+                }
+                spendBal = spendBal + addit;
+                //current free balance needs to be updated as well, 1040 is from Scheduled Out
+                currFree = (spendBal - 1040);
+                //avoid negative numbers in current free, doesn't make sense to have them there
+                if (currFree < 0) {
+                    currFree = 0;
+                }
+                spendBal = parseFloat(spendBal).toFixed(2);
+                if (spendBal > 6011.26) {
+                    spendBal = 6011.26;
+                }
+                else if (spendBal < 1040.00) {
+                    spendBal = "1040.00";
+                    reserveBal = "4,971.26";
+                }
+                currPos = ui.value;
+                XferAmount = ((Math.abs(ui.value - oldPos) * .01) * 6011.26).toFixed(2);
+                //transfer to spend or to reserve?
+                if (oldPos > currPos) {
+                    snippet = "Spend to Reserve";
+                }
+                else if (oldPos < currPos) {
+                    snippet = "Reserve to Spend";
+                }
+                //determine the x position of the modal
+                modalPosX = $('.ui-slider-handle').offset().left - 153;
+                //create modal and populate
+                $('.transferBubble').remove();
+                var modal = "<div class=\"transferBubble\" style=\"left:" + modalPosX + "px\"><h1>Confirm Money Bar transfer</h1><form name=\"moneybarTransfer\"><p>Transfer <input class=\"editTransfer type=\"text\" required=\"\" value=\"" + XferAmount + "\"> from <span class=\"transferDirection \">" + snippet + "</span>?</p><p class=\"transferConfirm\"><button>Transfer</button><a href=\"javascript:void(0);\" class=\"cancel\">   Cancel</a></p></form></div>";
+                var blocker = "<div id=\"blocker\"></div>";
+                $('body').append(modal, blocker);
+                //tell the parent window to expand to accomodate the modal
+                window.parent.postMessage('grow', '*');
+                //fix up formatting of current free amount and do the same for it
+                currFree = parseFloat(currFree).toFixed(2);
+                if (currFree.length > 6) {
+                    currFree = currFree.slice(0, 1) + "," + currFree.slice(1);
+                }
+                if (savings.length > 6) {
+                    if (savings != "2,850.00") {
+                        savings = savings.slice(0, 1) + "," + savings.slice(1);
+                    }
+                }
+            }
+        });
+
+        //set up bindings for cancel and transfer
+        $('body').on("click", ".cancel", function () {
+            $('.transferBubble').remove();
+            $('.mySlider').slider({ 'value': oldPos })
+            $('.ui-slider-range').css('width', oldPos + '%');
+            $('#blocker').remove();
+            window.parent.postMessage('shrink', '*');
+        });
+
+        $('body').on("click", ".transferConfirm button", function (e) {
+            e.preventDefault();
+            spendBal = spendBal.toString();
+            reserveBal = reserveBal.toString()
+            if (spendBal.length > 6) {
+                spendBal = spendBal.slice(0, 1) + "," + spendBal.slice(1);
+            }
+            if (reserveBal.length > 6) {
+                reserveBal = reserveBal.slice(0, 1) + "," + reserveBal.slice(1);
+            }
+            $('.transferBubble').remove();
+            $('.mySlider').slider({ 'value': currPos })
+            $('.ui-slider-range').css('width', currPos + '%');
+            $('#blocker').remove();
+            //inject the values back into their spans
+            $('.reserveBal span').html("$" + reserveBal);
+            $('.spendBal span').html("$" + spendBal);
+            $('.freeTab span:not(.plusMinus span)').html("$" + currFree);
+            window.parent.postMessage('shrink', '*');
+        });
+
+        $('.plusMinus').on("click", function (e) {
+            console.log($(this).offset())
+            var dataText = $(this).attr("data-text");
+            var bubble = $('.bubble[data-text=' + dataText + ']');
+            $('.open-bubble').html("");
+            $('.open-bubble').removeClass('open-bubble');
+            $(this).addClass('open-bubble');
+            setTimeout(function () {
+                $('.open-bubble').html(bubble.html());
+            }, 300);
+            console.log($(this).offset())
+            if ($(e.target).is("span")) {
+                $(this).html('');
+                $(this).removeClass('open-bubble');
+            }
+
+        });
+
+    </script>
+
+    </div>
+</body>
+
+</html>
