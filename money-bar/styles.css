@@ -1,0 +1,55 @@
+/* Font Stack */
+@font-face {font-family: "PNC Sans";src: url(fonts/PNCSans-Regular.otf);}
+
+@font-face {font-family: "PNC Light";src: url(fonts/PNCSans-Light.otf);font-weight: lighter;}
+
+@font-face {font-family: "PNC Medium";src: url(fonts/PNCSans-Medium.otf);}
+
+/* Landscape Viewport Styles */
+html					{width:1024px;height:768px;margin:0;padding:0;font-size:14px;font-family:"PNC Sans";text-align: center;}
+body 					{padding:0;margin:0;background-color:#eef0f1;}
+header					{width:100%;height:71px;background:url(img/generalblue-banner.png) no-repeat top right;background-size:cover;position:fixed;top:0;left:0;z-index:3;}
+header.points			{background-image:url(../VW-Images/header-bg.jpg);position:absolute;z-index:2}
+header.cashBuilder		{background-image:url(img/CashBuilder-Banner.png);}
+header.traveler		{background-image:url(img/PremierTraveler-Banner.png);}
+header.core				{background-image:url(img/Core-Banner.png);}
+
+header h2				{color:#ee7421;font-weight: normal;font-family:"PNC Light";font-size:35px;margin:16px auto;height:36px;line-height:36px;text-align:center;position:relative}
+header h2 span			{font-size: 20px;position:relative;top:-10px;}
+.hero					{height:200px;width:100%;background-size:cover;position:fixed;top:76px;}
+.hero.points			{background-image:url(img/Points-Header-Image.jpg);}
+.hero.traveler			{background-image: url(img/Traveler-Header-Image.jpg);}
+.hero.cashBuilder 		{background-image:url(img/CashBuilder-Header-Image.jpg);}
+.hero.core 				{background-image: url(img/Core-Header-Image.jpg);}
+#content				{position:absolute;top:275px;background-color:#eef0f1;width:1024px;}
+.tab 					{height:82px;width:50%;text-align:center;display:inline-block;box-sizing:border-box;margin:0;background-color:#cdcdcd;color:white;}
+.tab h2 				{height:50%; margin:0;padding:5%;}
+#tab-two				{float:right;}
+.active					{background-color:#eef0f1;color:#1f9bde;}
+#calc-header			{width:45%;margin:auto;text-align: center;}
+#tb-2					{display:none;}
+.iWrapper				{width:90%;height:750px;overflow:hidden;position:relative;margin:auto;}
+.iWrapper.points 		{height:800px;}
+.iWrapper.points.second,
+.iWrapper.balance.second,
+.iWrapper.core 			{height:720px;}
+#iWrapper-One iframe 	{width:100%;}
+#iWrapper-Two iframe 	{width:100%;}
+.tab-body				{padding:60px 0;}
+.tab-body *:not(div)	{width:80%;text-align:left;margin:auto;}
+.fade					{transition: all 2s ease;opacity:0;}
+#backToTop				{display:none;position: fixed;top:90%;right:20px;height:45px; width:45px;transition:all 2s ease;font-size:3.5em;cursor:pointer;background-image: url(img/BackToTop-Button.png);background-repeat:no-repeat;background-size:cover;z-index:10;}
+ul li 					{text-align: left;}
+
+
+
+
+/* Portrait Viewport Styles */
+@media screen and (max-width:768px){
+html					{width:768px;height:1024px;}
+
+}
+#footer {
+	font-size: 21px;
+	font-style: italic;
+}

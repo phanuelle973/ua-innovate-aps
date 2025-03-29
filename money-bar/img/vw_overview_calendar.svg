@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="124px" height="112px" viewBox="0 0 124 112" style="enable-background:new 0 0 124 112;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;}
+	.st1{fill:#FFC86F;}
+	.st2{fill:url(#SVGID_1_);}
+	.st3{fill:#F58025;}
+	.st4{fill:none;stroke:#566875;stroke-width:2.5;stroke-miterlimit:10;}
+	.st5{fill:none;stroke:#566875;stroke-width:2.5;stroke-linecap:round;stroke-miterlimit:10;}
+	.st6{fill:none;stroke:#566875;stroke-width:2.8488;stroke-miterlimit:10;}
+	.st7{fill:#566875;}
+</style>
+<pattern  x="-23" y="-6" width="3.341" height="3.341" patternUnits="userSpaceOnUse" id="New_Pattern_Swatch_3" viewBox="0 -3.341 3.341 3.341" style="overflow:visible;">
+	<g>
+		<rect y="-3.341" class="st0" width="3.341" height="3.341"/>
+		<path class="st1" d="M2.625-1.67c0,0.395,0.32,0.716,0.716,0.716v-1.432C2.945-2.386,2.625-2.066,2.625-1.67z"/>
+		<path class="st1" d="M0.716-1.67c0-0.395-0.32-0.716-0.716-0.716v1.432C0.395-0.954,0.716-1.275,0.716-1.67z"/>
+		<path class="st1" d="M1.67-0.716c-0.395,0-0.716,0.32-0.716,0.716h1.432C2.386-0.395,2.066-0.716,1.67-0.716z"/>
+		<path class="st1" d="M1.67-2.625c0.395,0,0.716-0.32,0.716-0.716H0.954C0.954-2.945,1.275-2.625,1.67-2.625z"/>
+	</g>
+</pattern>
+<g>
+	<pattern  id="SVGID_1_" xlink:href="#New_Pattern_Swatch_3" patternTransform="matrix(1 0 0 1 87.5266 69.2206)">
+	</pattern>
+	<polygon class="st2" points="93.976,99.5 105.5,87.201 105.5,30.5 92,30.5 58.667,99.5 	"/>
+	<rect x="22" y="16" class="st3" width="87" height="18"/>
+	<path class="st4" d="M18.499,24.017C11.907,32.969,8.012,44.029,8.012,55.999"/>
+	<path class="st4" d="M93.975,12.495C85.024,5.906,73.966,2.012,61.999,2.012c-11.97,0-23.03,3.895-31.981,10.487"/>
+	<path class="st5" d="M8.012,55.999c0,29.819,24.169,53.989,53.987,53.989c29.816,0,53.989-24.171,53.989-53.989
+		c0-6.94-1.31-13.575-3.696-19.67"/>
+	<line class="st6" x1="93.976" y1="99.5" x2="30" y2="99.5"/>
+	<polyline class="st6" points="105.5,87.976 105.5,12.5 18.5,12.5 18.5,87.98 	"/>
+	<line class="st6" x1="18.5" y1="30.5" x2="105.5" y2="30.5"/>
+	<g>
+		<circle class="st7" cx="40.333" cy="44" r="2.5"/>
+		<circle class="st7" cx="51.167" cy="44" r="2.5"/>
+		<circle class="st7" cx="62" cy="44" r="2.5"/>
+		<circle class="st7" cx="72.833" cy="44" r="2.5"/>
+		<circle class="st7" cx="83.667" cy="44" r="2.5"/>
+		<circle class="st7" cx="94.5" cy="44" r="2.5"/>
+	</g>
+	<g>
+		<circle class="st7" cx="29.5" cy="54.5" r="2.5"/>
+		<circle class="st7" cx="40.333" cy="54.5" r="2.5"/>
+		<circle class="st7" cx="51.167" cy="54.5" r="2.5"/>
+		<circle class="st7" cx="62" cy="54.5" r="2.5"/>
+		<circle class="st7" cx="72.833" cy="54.5" r="2.5"/>
+		<circle class="st7" cx="83.667" cy="54.5" r="2.5"/>
+		<circle class="st3" cx="83.667" cy="54.5" r="4.5"/>
+		<circle class="st7" cx="94.5" cy="54.5" r="2.5"/>
+	</g>
+	<g>
+		<circle class="st7" cx="29.5" cy="65" r="2.5"/>
+		<circle class="st7" cx="40.333" cy="65" r="2.5"/>
+		<circle class="st7" cx="51.167" cy="65" r="2.5"/>
+		<circle class="st7" cx="62" cy="65" r="2.5"/>
+		<circle class="st7" cx="72.833" cy="65" r="2.5"/>
+		<circle class="st7" cx="83.667" cy="65" r="2.5"/>
+		<circle class="st7" cx="94.5" cy="65" r="2.5"/>
+	</g>
+	<g>
+		<circle class="st7" cx="29.5" cy="75.5" r="2.5"/>
+		<circle class="st7" cx="40.333" cy="75.5" r="2.5"/>
+		<circle class="st7" cx="51.167" cy="75.5" r="2.5"/>
+		<circle class="st7" cx="62" cy="75.5" r="2.5"/>
+		<circle class="st7" cx="72.833" cy="75.5" r="2.5"/>
+		<circle class="st7" cx="83.667" cy="75.5" r="2.5"/>
+		<circle class="st7" cx="94.5" cy="75.5" r="2.5"/>
+	</g>
+	<g>
+		<circle class="st7" cx="29.5" cy="86" r="2.5"/>
+		<circle class="st7" cx="40.333" cy="86" r="2.5"/>
+		<circle class="st7" cx="51.167" cy="86" r="2.5"/>
+	</g>
+	<circle class="st3" cx="51.167" cy="65" r="4.5"/>
+	<path class="st5" d="M105.5,40.008"/>
+</g>
+</svg>

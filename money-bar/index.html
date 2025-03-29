@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+		Virtual Wallet Demo - Money Bar
+		</title>
+		<link href="money-bar/styles.css" rel="stylesheet">
+		<link href="accordion.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="money-bar/sitenav.css">
+		<meta content=
+		"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+		name="viewport">
+		<script src="JS/jquery-2.0.0.min.js"></script>
+		<script src="JS/jquery-ui.min.js"></script>
+		<script src="JS/jquery.ui.touch-punch.min.js"></script>
+		<script src="JS/common.js"></script>
+		<script src="JS/dpsHTMLGestureAPI.min.js"></script>
+		<style>
+		      *                                               {box-sizing:border-box;-webkit-tap-highlight-color:rgba(0,0,0,0);max-width: 1024px;}
+		      body											  {background-color:#fff;}
+		      body::-webkit-scrollbar                         {display:none;}
+		      html                                            {margin:0;padding:0;color:#5f676c;font-size:17px;line-height:18px;height:768px;}
+			header {position: fixed;z-index: 100;width: 100%;background-image: url(img/header-bg.jpg);height: 71px;background-size: 1px 71px;background-repeat:repeat-x;top: 46px;left: 0;}
+header h2				{color:#ee7421;font-weight: normal;font-family:"PNC Light";font-size:35px;margin:16px auto;height:36px;line-height:36px;text-align:center;position:relative}
+		      section                                         {height:522px;position:relative;left:0;width:1024px;z-index:1;}
+		      section:first-of-type                           {top:0;z-index:1;}                                
+		      section:first-of-type                           {top:115px;background:#fff;z-index:3;}
+		      section:first-of-type .section-content      {padding:0;}
+		      .section-content                                {padding:20px 75px;min-height:492px;}
+		      .section-bottom-bar                             {height:45px;background:#dcdcdc;bottom:-2px;position:absolute;width:1024px;left:0;padding:10px 0 0 0;text-align:center;}
+		      section:first-of-type .section-bottom-bar       {background:#ee7421;}
+		      .section-bottom-bar img                         {display:inline-block;height:25px;margin:auto;}
+		      .logo   img                                                 {height:54px;position:absolute;left:25px;top:8px;z-index:5}
+		      .three-column                                   {width:280px;display:inline-block;text-align:left;vertical-align: text-top;text-align:left;margin:auto;height:175px;padding-left:30px}
+		      .three-column:nth-of-type(4)					  {margin-left:25px;}
+		      li                                              {margin-bottom:10px;}
+		      .column p:nth-of-type(odd)                      {font-weight:bold;margin-bottom:0;}
+		      .column-header                                  {position:relative;width:50%;left:-28px;line-height:0.4em}
+		      .three-column p                                 {width:65%;display:inline-block;height:135px;vertical-align: -webkit-baseline-middle;text-align:left;}
+		      .three-column p:first-child                     {width:100%;background-size:cover;height:95px;vertical-align: top;}
+		      .three-column ul                                {padding-left:0;list-style-type: square;}
+		      a                                               {text-decoration: none;color:#ee7421;font-weight:bold;}
+			.tout-box                                       {background-color: rgb(241, 244, 245);background-size:contain;height:240px;padding: 5px;}
+		      .tout-box h2									  {color: #484848;font-weight:normal;font-family:"PNC Medium";line-height: 32px;margin: 15px 0px 25px 0px;font-size: 20px; letter-spacing: 3px;}
+			.tout-box h2:after {content: "";border-bottom: 2px solid #f58025;height: 2px;display: block;width: 120px;margin: 0 auto;position: inherit;padding-top: 5px;}
+		      .tout img                                       {height:95px;width:95px;}
+		      .tout-header h2                         {color:white;font-weight: normal;font-family:"PNC Light";font-size:28px;margin:0px auto;
+		          height:26px;line-height:36px;text-align: center;position:relative;top:-35px}
+		      .calendarIllustration img           {height:260px;width:260px;position:relative;right:10px;top:-25px}
+		      sup 												{font-size:1.5em;position: absolute;}
+		      header sup                                             {top: 25px;left: 653px;color:#ee7421;}
+		      li sup										{top: 376px;left: 492px;font-size:1.2em;}
+		      p sup 										 {right:-10px;}
+		      h3                                              {font-size:27px;font-weight:normal;font-family:"PNC Light";color:#0069aa;text-align:center;}
+		      /*#firstIcon img                              {top:140px;left:30px;}*/
+		      #firstIcon p                                    {position:absolute;top:175px;left:4.25%}
+		      /*#secondIcon img                             {top:140px;left:150px;}*/
+		      #secondIcon p                                   {position:absolute;top:175px;left:15.75%}
+		      /*#thirdIcon img                              {top:140px;left:270px;}*/
+		      #thirdIcon p                                    {position:absolute;top:175px;left:28%}
+		      /*#fourthIcon img                             {top:140px;left:390px;}*/
+		      #fourthIcon p                                   {position:absolute;top:168px;left:40%;line-height:120%}
+		      /*#fifthIcon img                              {top:140px;left:510px;}*/
+		      #fifthIcon p                                    {position:absolute;top:168px;left:53%;line-height:100%}
+		      /*#sixthIcon img                              {top:140px;left:630px;}*/
+		      #sixthIcon p                                    {position:absolute;top:175px;left:63%}
+		      /*#seventhIcon img                            {top:140px;left:750px;}*/
+		      #seventhIcon p                              {position:absolute;top:175px;left:77.5%}
+		      /*#eighthIcon img                             {top:140px;left:870px;}*/
+		      #eighthIcon p                                   {position:absolute;top:175px;left:88%}
+		    .tout{width:15.5%;display:inline-block;vertical-align:text-top;text-align:center;margin:auto;padding-right:0px;font-size:17px;padding-top:7px;}
+			.tout p {color:#484848;font-family:"PNC Medium";font-weight: normal;margin-top: 5px;line-height: 22px;}    
+			.left-arrow                                     {position:absolute;top:415px;left:25px}
+		    .two-column {width:49%;display:inline-block;vertical-align: top;text-align:center;padding: 40px 60px 0px 105px;}
+			.two-column p {text-align:left;line-height: 24px;font-size: 16px;}
+			.two-column h3 {font-size: 30px;text-align: left;font-family: "PNC Sans";color: #484848;}  
+			.left-arrow img                             {height:40px;}
+		      .right-arrow                                    {position:absolute;top:415px;right:25px}
+		      .right-arrow img                            {height:40px;}
+		      li                                              {font-family:"PNC Light";line-height:1.6em}
+		      .footer                                             {color:white;background: url('img/grey-footer.jpg');background-size:cover;position: absolute;left: 0;top: 671px;height: 											57px; width: 100%; overflow: hidden;font-size:21px;}
+		      .footer a                                      {font-weight: normal;font-family:"PNC Sans";font-size:21px;color:white;display: inline-block;height: 21px;margin: 21px 15px 											15px 15px;}
+		      .footer img                            		{position: absolute;left: 25px;bottom: 0;height: 50px;width: 53px;}
+
+		      h3.money  							 {text-align:left;margin:35px auto 10px 105px;width:50%;font-family:"PNC Sans";}
+			  	      ul li.no-bullet								{list-style-type:none;margin-left:auto;}
+		      ul li 										{margin-left:17px;}
+		      .demo											{padding:20px 0 0 0;margin-top:196px;}
+			  .demo iframe 									{width:80%;margin:auto;}
+		      .demo h3 										{color:#484848;font-size:27px;margin-bottom:10px;font-family:"PNC Sans";}
+		      .demo p 										{font-size:16px;margin-bottom:10px;line-height:1.5em;font-family:"PNC Sans";font-weight: normal;}
+		hr {border-color:#5b6872;border-style: solid;width:92%;border-width: 1.5px;margin-top: 0px;}
+		.disclaimer {padding:0 70px 50px 70px;}
+		.disclaimer h3 {text-align: left;font-size: 17px;font-family: PNC Medium;font-weight: normal;color: #5f676c;}
+		.disclaimer p {font-size: 12px;text-align: left;}
+		.disclaimer img {margin-right:835px;}
+					
+					.section-content {
+					    padding: 20px 75px;
+					}
+					.images-disclaimer {
+						top: -30px;
+						width: 250px;
+						position:relative;
+					    width: 250px;
+					    margin: auto;
+					}
+					.images-disclaimer p {
+						line-height:18px;
+						text-align: center;
+					    padding-left: 0px;
+					    font-size: 12px; 
+			}
+						span {font-family: PNC Medium;}
+
+.bottom-bar {background:#414e58;height:40px;position:fixed;bottom:0;left:0;width:100%;z-index: 4;}
+	.right-bottom-link{border-bottom:5px solid #ee7421;}
+    .hidden {
+        display: none;
+    }
+.bottom-link {color:#fff;font-size:17px;display:inline-block;width:24.67%;height:40px;text-align:center;text-decoration: none;padding:10px 0;font-family: "PNC Sans";font-weight: normal;}
+
+			
+		</style>
+	</head>
+	<body class="overview-page">
+		<div class="topnav" style="position:fixed">
+  <a href="../../../OOF-IntroSlider-Content-2/index.html" class="nav-title">PNC Consumer National</a>
+  <div id="navLinks">
+    <a href="../../../OOF-IntroSlider-Content-2/index.html">Home</a>
+    <a href="../../../PNC-HYS-OOF/index.html">PNC High Yield Savings</a>
+    <a href="money-bar/index.html">PNC Virtual Wallet®</a>
+    <a href="../../../CreditCards/index.html">PNC Bank Credit Cards</a>
+
+    <p>©2021 The PNC Financial Services Group, Inc. All rights reserved.</p>
+  </div>
+  <a href="javascript:void(0);" class="icon">
+    <i class="fa fa-bars burger"></i>
+  </a>
+</div>
+		<header>
+			<div class="logo">
+				<img src="img/pnc-logo.png">
+			</div>
+			<h2>
+				PNC Virtual Wallet&reg;
+			</h2>
+		</header><!--begin section-->
+		<section>
+			<div class="section-content">
+				<div class="tout-box">
+					
+						<h2>
+							TAKE A FRESH LOOK AT YOUR MONEY
+						</h2>
+			<!-- change the navto links -->
+					<div class="tout">
+						<a href="../VW-Cal-Final - New/index.html"><img src=
+						"img/vw_overview_calendar.svg">
+						<p>
+							Calendar
+						</p></a>
+					</div>
+					<div class="tout" style="border-bottom: 5px solid #f58025;">
+						<a href="javascript:void(0);"><img src=
+						"img/vw_overview_money_bar.svg">
+						<p>
+							Money Bar&reg;
+					  </p></a>
+					</div>
+					<div class="tout">
+						<a href="../VW-WishList - New/index.html"><img src=
+						"img/vw_overview_wish-list.svg">
+						<p>
+							Savings Goals
+					  </p></a>
+					</div>
+					<div class="tout">
+						<a href="../VW-SpendBudgets - New/index.html"><img src=
+						"img/vw_overview_budgets.svg">
+						<p>
+							Spending + Budgets
+						</p></a>
+					</div>
+					<div class="tout">
+						<a href="../VW-SavingsEngine - New/index.html"><img src=
+						"img/vw_overview_savings-engine.svg">
+						<p>
+							Savings
+							Engine&reg;
+						</p></a>
+					</div>
+					<div class="tout">
+						<a href="../VW-PunchThePig - New/index.html"><img src=
+						"img/vw_overview_punch-the-pig.svg">
+						<p>
+							Save Now
+					  </p></a>
+					</div>
+					<!--<div class="tout" id="seventhIcon">
+						<a href="navto://VWMobile"><img src=
+						"img/Mobile-Icon-Off.png">
+						<p>
+							Mobile
+					  </p></a>
+					</div>
+					<div class="tout" id="eighthIcon">
+						<a href="navto://VWCreditCard"><img src=
+						"img/CreditCard-Icon-Off.png">
+						<p>
+							Credit Card
+					  </p></a>
+					</div>-->
+				</div>
+				
+					<div class="left-arrow">
+						<a href="../VW-Cal-Final - New/index.html"><img src="img/left-arrow.png"></a>
+					</div>
+				
+						<div class="two-column">
+						<h3>Money Bar&reg;</h3>
+						<p>You'll see the money you've scheduled for bills and what's free to spend.
+							</p>
+
+					</div>
+
+					<div class="two-column">
+						<div class="calendarIllustration">
+							<a href="#" data-position="602"><img class="downarrow" src=
+							"img/MoneyBar-Illustration.png"></a>
+						<div class="images-disclaimer">
+                            <p><em>Images for illustrative purposes only.</em>
+					</div>
+						</div>
+					</div>
+					<div class="right-arrow">
+						<a href="../VW-WishList - New/index.html"><img src="img/right-arrow.png"></a>
+					</div>
+				</div>
+		
+		</section><!--end section-->
+		<div class="footer" data-position="602">
+			
+				<img class="downarrow" src="img/vw-hand.png">
+				
+		
+		    <em data-position="602"><a href="#" class="downarrow">TRY THE DEMO!</a>
+			</em>
+			</div>
+			
+			
+		<div class="demo">
+						<h3>See How the Money Bar&reg; Works</h3><p>Using the slider, easily move money between Spend and Reserve.</p>
+				<iframe scrolling="no" src="money-bar/index.html" width="838" height="450" frameborder="0">
+				  <p>Your browser does not support iframes.</p>
+				</iframe>
+		</div>
+		
+        
+	<hr/>	               
+                                   <div class="disclaimer">
+                        <h3>Important Legal
+                        Disclosures and Information</h3>
+                                         <p><em>Images for illustrative purposes only.</em>
+<br>
+                                        <p>PNC has numerous patents/pending patent applications directed at various features and functions of Virtual Wallet.
+<br><br>
+Bank deposit products and services provided by PNC Bank, National Association. <strong>Member FDIC</strong></p>
+                                    </div>
+    </div>
+
+    <div class='bottom-bar'>
+        <a class='left-bottom-link bottom-link'href='money-bar/index.html'>Virtual Wallet&reg; Overview &rsaquo;</a> <a class='centerleft-bottom-link bottom-link'href='money-bar/index.html'>Compare Features &rsaquo;</a> <a class='centerright-bottom-link bottom-link'href='../../../VW-OutOfFootprint/Virtual Wallet Student (OOFP)/index.html'>Virtual Wallet Student&reg; &rsaquo;</a> <a class='right-bottom-link bottom-link'>Digital Tool Demos &rsaquo;</a>
+    </div>
+	
+<div id="backToTop"></div>
+		
+		<script>
+		$(document).ready(function(){
+
+			$('a.icon, i.burger').click(function(e){
+          if($('#navLinks').css('display')=="block"){
+            $('#navLinks').hide();
+            return false;
+          }else{
+            $('#navLinks').show();
+            return false;
+          }
+        });
+			
+		function snapToSection(e){
+				var pos = e.target.parentNode.getAttribute("data-position");
+				scrollTo(pos, snap, 1500);
+				}
+		
+		
+		var elems = $('*');
+		elems.on("click", function(e){
+			;
+					if ($(this).hasClass("downarrow")){
+						console.log("in here");
+						snapToSection(e);
+						return false;
+					}
+					else if($(this).is("#backToTop")){
+						adobeDPS.Gesture.disableNavigation()
+						window.scroll(0,0);
+						setTimeout(adobeDPS.Gesture.enableNavigation(),1000);
+					}
+					else if($(e.target).is(":not(.downarrow, #backToTop, .tout *, a, .slide)")){
+						e.stopPropagation();
+						adobeDPS.Gesture.toggleNavigationUI();
+						}											
+			});
+		function FindByAttributeValue(attribute, value, tag)    {
+		if (tag === undefined){ tag = "*"}
+		var All = document.getElementsByTagName(tag);
+		for (var i = 0; i < All.length; i++)       {
+		if (All[i].getAttribute(attribute) == value) { return All[i]; }
+			}
+		}	
+		});
+
+		window.addEventListener("message", adjustIframe, false);
+
+		function adjustIframe(event){
+			var height = parseInt($('iframe').attr("height"));
+			if (event.data == "grow") {
+				height = height + 50;
+				$('iframe').attr("height",height)
+			}
+			else if (event.data == "shrink") {
+				height = height - 50;
+				$('iframe').attr("height",height)
+			}
+		}
+		</script>
+	</body>
+</html>
