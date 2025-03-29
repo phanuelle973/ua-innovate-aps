@@ -2176,6 +2176,18 @@ hr.budgetAlertsHR {
     top: 0;
     left: 0;
 }
+.moneyBarContainer .ui-slider .lockbox {
+    min-width: 30px;
+    background-color: #eba835;
+    background: url('../../img/redStripes2.png') repeat top left;
+    background: url('../../img/redStripes2.png') repeat top left, linear-gradient(to bottom,  #eba835 0,  #e76f32 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eba835',  endColorstr='#e76f32',  GradientType=0);
+    height: 62px;
+    border-radius: 40px 0 0 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 .moneyBarContainer .ui-slider .setAside {
     min-width: 30px;
     background: rgba(0, 0, 0, 0.3);
