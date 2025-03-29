@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spending + Budgets</title>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<link href="styles.css" rel="stylesheet">
+<link href="css/app.css" rel="stylesheet">
+</head>
+<body>
+<div class="main-content">
+<div class="firstBar bar"><i aria-hidden="true" class="fa fa-university"></i>
+<h3>Bank</h3>
+<p>$44</p>
+</div>
+<div class="secondBar bar"><i aria-hidden="true" class="fa fa-envelope"></i>
+<h3>Bills</h3>
+<p>$350</p>
+</div>
+<div class="thirdBar bar"><i aria-hidden="true" class="fa fa-automobile"></i>
+<h3>Auto</h3>
+<p>$205</p>
+</div>
+<div class="fourthBar bar"><i aria-hidden="true" class="fa fa-automobile"></i>
+<h3>Groceries</h3>
+<p>$165</p>
+</div>
+<div class="growbar"></div>
+</div>
+<div class="icon-spendingZone-callout-left"></div>
+<div class="totalSpending barOne">
+<h2 style="font-size:16px;font-family:'PNC Sans';">BANK TRANSACTIONS SPENDING</h2>
+<div class="spendingHistory"><svg class="nvd3-svg" height="220" width="430">
+<defs>
+<lineargradient id="regular-gradient" x1="0" x2="0" y1="0" y2="1">
+<stop class="regular-gradient-0" offset="0%"></stop>
+<stop class="regular-gradient-100" offset="100%"></stop>
+</lineargradient>
+<lineargradient id="active-gradient" x1="0" x2="0" y1="0" y2="1">
+<stop class="active-gradient-0" offset="0%"></stop>
+<stop class="active-gradient-100" offset="100%"></stop>
+</lineargradient>
+</defs>
+<g class="nvd3 nv-wrap nv-barWithLine" transform="translate(30,20)">
+<g>
+<g class="nv-focus">
+<g class="nv-x nv-axis nvd3-svg" transform="translate(0,165)">
+<g class="nvd3 nv-wrap nv-axis">
+<g>
+<g class="tick" style="opacity: 1;" transform="translate(21.11111111111111,0)">
+<line x2="0" y2="-165"></line>
+<text dy=".71em" style="text-anchor: middle;" x="0" y="5">
+<tspan>Nov</tspan>
+<tspan dy="15" x="0">2015</tspan>
+</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(63.33333333333333,0)">
+<line x2="0" y2="-165"></line>
+<text dy=".71em" style="text-anchor: middle;" x="0" y="5">Dec</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(105.55555555555556,0)">
+<line x2="0" y2="-165"></line>
+<text dy=".71em" style="text-anchor: middle;" x="0" y="5">
+<tspan>Jan</tspan>
+<tspan dy="15" x="0">2016</tspan>
+</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(147.77777777777777,0)">
+<line x2="0" y2="-165"></line>
+<text dy=".71em" style="text-anchor: middle;" x="0" y="5">Feb</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(190,0)">
+<line x2="0" y2="-165"></line>
+<text dy=".71em" style="text-anchor: middle;" x="0" y="5">Mar</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(232.22222222222223,0)">
+<line x2="0" y2="-165"></line>
+<text class="hover" dy=".71em" style="text-anchor: middle;" x="0" y="5">Apr</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(274.44444444444446,0)">
+<line x2="0" y2="-165"></line>
+<text dy=".71em" style="text-anchor: middle;" x="0" y="5">May</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(316.6666666666667,0)">
+<line x2="0" y2="-165"></line>
+<text dy=".71em" style="text-anchor: middle;" x="0" y="5">Jun</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(358.88888888888886,0)">
+<line x2="0" y2="-165"></line>
+<text class="active" dy=".71em" style="text-anchor: middle;" x="0" y="5">Jul</text>
+</g>
+<path class="domain" d="M0,0V0H380V0"></path>
+<text class="nv-axislabel" text-anchor="middle" x="190" y="36"></text>
+</g>
+</g>
+</g>
+<g class="nv-y nv-axis nvd3-svg" style="opacity: 1;">
+<g class="nvd3 nv-wrap nv-axis">
+<g>
+<g class="tick zero" style="opacity: 1;" transform="translate(0,165)">
+<line x2="380" y2="0"></line>
+<text dy=".32em" opacity="0" style="text-anchor: end;" x="-3" y="0">$0</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(0,132)">
+<line x2="380" y2="0"></line>
+<text dy=".32em" opacity="1" style="text-anchor: end;" x="-3" y="0">$10</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(0,99)">
+<line x2="380" y2="0"></line>
+<text dy=".32em" opacity="1" style="text-anchor: end;" x="-3" y="0">$20</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(0,66)">
+<line x2="380" y2="0"></line>
+<text dy=".32em" opacity="1" style="text-anchor: end;" x="-3" y="0">$30</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(0,32.99999999999999)">
+<line x2="380" y2="0"></line>
+<text dy=".32em" opacity="1" style="text-anchor: end;" x="-3" y="0">$40</text>
+</g>
+<g class="tick" opacity="0" style="opacity: 1;" transform="translate(0,0)">
+<line x2="380" y2="0"></line>
+<text dy=".32em" opacity="0" style="text-anchor: end;" x="-3" y="0">$50</text>
+</g>
+<path class="domain" d="M0,0H0V165H0"></path>
+<text class="nv-axislabel" style="text-anchor: middle;" transform="rotate(-90)" x="-82.5" y="-50"></text>
+</g>
+<g class="nv-axisMaxMin nv-axisMaxMin-y nv-axisMin-y" transform="translate(0,165)">
+<text dy=".32em" style="opacity: 1;" text-anchor="end" x="-3" y="0">$0</text>
+</g>
+<g class="nv-axisMaxMin nv-axisMaxMin-y nv-axisMax-y" transform="translate(0,0)">
+<text dy=".32em" style="opacity: 1;" text-anchor="end" x="-3" y="0">$50</text>
+</g>
+</g>
+</g>
+<g class="nv-areaWrap nvd3-svg">
+<g class="nvd3 nv-wrap nv-line" transform="translate(0,0)">
+<defs>
+<clippath id="nv-edge-clip-30756">
+<rect height="165" width="380"></rect>
+</clippath>
+</defs>
+<g clip-path>
+<g class="nv-groups">
+<g class="no-budget nv-group nv-series-0" style="stroke-opacity: 1; stroke-width: 1.5; fill-opacity: 1e-06; fill: rgb(31, 119, 180); stroke: rgb(31, 119, 180);">
+<path class="nv-area"></path>
+<path class="nv-line"></path>
+</g>
+</g>
+<g class="nv-scatterWrap nvd3-svg" clip-path>
+<g class="nvd3 nv-wrap nv-scatter nv-chart-30756" transform="translate(0,0)">
+<defs>
+<clippath id="nv-edge-clip-30756">
+<rect height="165" width="380"></rect>
+</clippath>
+</defs>
+<g clip-path>
+<g class="nv-groups">
+<g class="nv-group nv-series-0" style="stroke-opacity: 1; fill-opacity: 0.5; stroke: rgb(31, 119, 180); fill: rgb(31, 119, 180);"></g>
+</g>
+<g class="nv-point-paths"></g>
+</g>
+<g class="nv-point-clips"></g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<g class="nv-barsWrap nvd3-svg">
+<g class="nvd3 nv-wrap nv-historicalBar-8096" transform="translate(0,0)">
+<defs>
+<clippath id="nv-chart-clip-path-8096">
+<rect height="165" width="380"></rect>
+</clippath>
+</defs>
+<g clip-path="url(#nv-chart-clip-path-8096)">
+<g class="nv-bars">
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-0" fill="#1f77b4" height="1" style="fill: url(#regular-gradient)" tabindex="0" transform="translate(2.1111111111111107,0)" width="38" x="0" y="164"></rect>
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-1" fill="#1f77b4" height="13.325400000000002" style="fill: url(#regular-gradient)" tabindex="0" transform="translate(44.33333333333333,0)" width="38" x="0" y="151.6746"></rect>
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-2" fill="#1f77b4" height="1" style="fill: url(#regular-gradient)" tabindex="0" transform="translate(86.55555555555556,0)" width="38" x="0" y="164"></rect>
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-3" fill="#1f77b4" height="159.3405" style="fill: url(#regular-gradient)" tabindex="0" transform="translate(128.77777777777777,0)" width="38" x="0" y="5.6594999999999995"></rect>
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-4" fill="#1f77b4" height="80.5926" style="fill: url(#regular-gradient)" tabindex="0" transform="translate(171,0)" width="38" x="0" y="84.4074"></rect>
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-5" fill="#1f77b4" height="145.4244" style="fill: url(#active-gradient)" tabindex="0" transform="translate(213.22222222222223,0)" width="38" x="0" y="19.575599999999994"></rect>
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-6" fill="#1f77b4" height="1" style="fill: url(#regular-gradient)" tabindex="0" transform="translate(255.44444444444446,0)" width="38" x="0" y="164"></rect>
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-7" fill="#1f77b4" height="1" style="fill: url(#regular-gradient)" tabindex="0" transform="translate(297.6666666666667,0)" width="38" x="0" y="164"></rect>
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-8" fill="#1f77b4" height="1" style="fill: url(#active-gradient)" tabindex="0" transform="translate(339.88888888888886,0)" width="38" x="0" y="164"></rect>
+</g>
+</g>
+</g>
+</g>
+<g class="nv-linesWrap nvd3-svg">
+<g class="nvd3 nv-wrap nv-line" transform="translate(0,0)">
+<defs>
+<clippath id="nv-edge-clip-72934">
+<rect height="165" width="380"></rect>
+</clippath>
+</defs>
+<g clip-path>
+<g class="nv-groups">
+<g class="no-budget nv-group nv-series-0" style="stroke-opacity: 1; stroke-width: 1.5; fill-opacity: 0.5; fill: rgb(31, 119, 180); stroke: rgb(31, 119, 180);">
+<path class="nv-line"></path>
+</g>
+</g>
+<g class="nv-scatterWrap nvd3-svg" clip-path>
+<g class="nvd3 nv-wrap nv-scatter nv-chart-72934" transform="translate(0,0)">
+<defs>
+<clippath id="nv-edge-clip-72934">
+<rect height="165" width="380"></rect>
+</clippath>
+</defs>
+<g clip-path>
+<g class="nv-groups">
+<g class="nv-group nv-series-0" style="stroke-opacity: 1; fill-opacity: 0.5; stroke: rgb(31, 119, 180); fill: rgb(31, 119, 180);"></g>
+</g>
+<g class="nv-point-paths"></g>
+</g>
+<g class="nv-point-clips"></g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg> </div>
+</div>
+<div class="totalSpending barTwo">
+<h2 class="ng-binding" style="font-size:16px;font-family:'PNC Sans';text-transform:uppercase;">Bills Spending</h2>
+<div class="spendingHistory"><svg class="nvd3-svg" height="220" width="430">
+<defs>
+<lineargradient id="regular-gradient" x1="0" x2="0" y1="0" y2="1">
+<stop class="regular-gradient-0" offset="0%"></stop>
+<stop class="regular-gradient-100" offset="100%"></stop>
+</lineargradient>
+<lineargradient id="active-gradient" x1="0" x2="0" y1="0" y2="1">
+<stop class="active-gradient-0" offset="0%"></stop>
+<stop class="active-gradient-100" offset="100%"></stop>
+</lineargradient>
+</defs>
+<g class="nvd3 nv-wrap nv-barWithLine" transform="translate(24,20)">
+<g>
+<g class="nv-focus">
+<g class="nv-x nv-axis nvd3-svg" transform="translate(0,165)">
+<g class="nvd3 nv-wrap nv-axis">
+<g>
+<g class="tick" style="opacity: 1;" transform="translate(21.444444444444443,0)">
+<line x2="0" y2="-165"></line>
+<text dy=".71em" style="text-anchor: middle;" x="0" y="5">
+<tspan>Nov</tspan>
+<tspan dy="15" x="0">2015</tspan>
+</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(64.33333333333333,0)">
+<line x2="0" y2="-165"></line>
+<text dy=".71em" style="text-anchor: middle;" x="0" y="5">Dec</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(107.22222222222223,0)">
+<line x2="0" y2="-165"></line>
+<text dy=".71em" style="text-anchor: middle;" x="0" y="5">
+<tspan>Jan</tspan>
+<tspan dy="15" x="0">2016</tspan>
+</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(150.11111111111111,0)">
+<line x2="0" y2="-165"></line>
+<text dy=".71em" style="text-anchor: middle;" x="0" y="5">Feb</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(193,0)">
+<line x2="0" y2="-165"></line>
+<text dy=".71em" style="text-anchor: middle;" x="0" y="5">Mar</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(235.8888888888889,0)">
+<line x2="0" y2="-165"></line>
+<text class="active" dy=".71em" style="text-anchor: middle;" x="0" y="5">Apr</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(278.77777777777777,0)">
+<line x2="0" y2="-165"></line>
+<text dy=".71em" style="text-anchor: middle;" x="0" y="5">May</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(321.6666666666667,0)">
+<line x2="0" y2="-165"></line>
+<text dy=".71em" style="text-anchor: middle;" x="0" y="5">Jun</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(364.55555555555554,0)">
+<line x2="0" y2="-165"></line>
+<text dy=".71em" style="text-anchor: middle;" x="0" y="5">Jul</text>
+</g>
+<path class="domain" d="M0,0V0H386V0"></path>
+<text class="nv-axislabel" text-anchor="middle" x="193" y="36"></text>
+</g>
+</g>
+</g>
+<g class="nv-y nv-axis nvd3-svg" style="opacity: 1;">
+<g class="nvd3 nv-wrap nv-axis">
+<g>
+<g class="tick zero" style="opacity: 1;" transform="translate(0,165)">
+<line x2="386" y2="0"></line>
+<text dy=".32em" opacity="0" style="text-anchor: end;" x="-3" y="0">$0</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(0,123.75)">
+<line x2="386" y2="0"></line>
+<text dy=".32em" opacity="1" style="text-anchor: end;" x="-3" y="0">$100</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(0,82.5)">
+<line x2="386" y2="0"></line>
+<text dy=".32em" opacity="1" style="text-anchor: end;" x="-3" y="0">$200</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(0,41.25)">
+<line x2="386" y2="0"></line>
+<text dy=".32em" opacity="1" style="text-anchor: end;" x="-3" y="0">$300</text>
+</g>
+<g class="tick" opacity="0" style="opacity: 1;" transform="translate(0,0)">
+<line x2="386" y2="0"></line>
+<text dy=".32em" opacity="0" style="text-anchor: end;" x="-3" y="0">$400</text>
+</g>
+<path class="domain" d="M0,0H0V165H0"></path>
+<text class="nv-axislabel" style="text-anchor: middle;" transform="rotate(-90)" x="-82.5" y="-50"></text>
+</g>
+<g class="nv-axisMaxMin nv-axisMaxMin-y nv-axisMin-y" transform="translate(0,165)">
+<text dy=".32em" style="opacity: 1;" text-anchor="end" x="-3" y="0">$0</text>
+</g>
+<g class="nv-axisMaxMin nv-axisMaxMin-y nv-axisMax-y" transform="translate(0,0)">
+<text dy=".32em" style="opacity: 1;" text-anchor="end" x="-3" y="0">$400</text>
+</g>
+</g>
+</g>
+<g class="nv-areaWrap nvd3-svg">
+<g class="nvd3 nv-wrap nv-line" transform="translate(0,0)">
+<defs>
+<clippath id="nv-edge-clip-68338">
+<rect height="165" width="386"></rect>
+</clippath>
+</defs>
+<g clip-path>
+<g class="nv-groups">
+<g class="no-budget nv-group nv-series-0" style="stroke-opacity: 1; stroke-width: 1.5; fill-opacity: 1e-06; fill: rgb(31, 119, 180); stroke: rgb(31, 119, 180);">
+<path class="nv-area"></path>
+<path class="nv-line"></path>
+</g>
+</g>
+<g class="nv-scatterWrap nvd3-svg" clip-path>
+<g class="nvd3 nv-wrap nv-scatter nv-chart-68338" transform="translate(0,0)">
+<defs>
+<clippath id="nv-edge-clip-68338">
+<rect height="165" width="386"></rect>
+</clippath>
+</defs>
+<g clip-path>
+<g class="nv-groups">
+<g class="nv-group nv-series-0" style="stroke-opacity: 1; fill-opacity: 0.5; stroke: rgb(31, 119, 180); fill: rgb(31, 119, 180);"></g>
+</g>
+<g class="nv-point-paths"></g>
+</g>
+<g class="nv-point-clips"></g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<g class="nv-barsWrap nvd3-svg">
+<g class="nvd3 nv-wrap nv-historicalBar-1512" transform="translate(0,0)">
+<defs>
+<clippath id="nv-chart-clip-path-1512">
+<rect height="165" width="386"></rect>
+</clippath>
+</defs>
+<g clip-path="url(#nv-chart-clip-path-1512)">
+<g class="nv-bars">
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-0" fill="#1f77b4" height="1" style="fill: url(#regular-gradient)" tabindex="0" transform="translate(2.144444444444442,0)" width="38.6" x="0" y="164"></rect>
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-1" fill="#1f77b4" height="42.81750000000001" style="fill: url(#regular-gradient)" tabindex="0" transform="translate(45.03333333333333,0)" width="38.6" x="0" y="122.18249999999999"></rect>
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-2" fill="#1f77b4" height="1" style="fill: url(#regular-gradient)" tabindex="0" transform="translate(87.92222222222223,0)" width="38.6" x="0" y="164"></rect>
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-3" fill="#1f77b4" height="144.375" style="fill: url(#regular-gradient)" tabindex="0" transform="translate(130.8111111111111,0)" width="38.6" x="0" y="20.625"></rect>
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-4" fill="#1f77b4" height="144.375" style="fill: url(#regular-gradient)" tabindex="0" transform="translate(173.7,0)" width="38.6" x="0" y="20.625"></rect>
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-5" fill="#1f77b4" height="144.375" style="fill: url(#active-gradient)" tabindex="0" transform="translate(216.5888888888889,0)" width="38.6" x="0" y="20.625"></rect>
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-6" fill="#1f77b4" height="1" style="fill: url(#regular-gradient)" tabindex="0" transform="translate(259.47777777777776,0)" width="38.6" x="0" y="164"></rect>
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-7" fill="#1f77b4" height="1" style="fill: url(#regular-gradient)" tabindex="0" transform="translate(302.3666666666667,0)" width="38.6" x="0" y="164"></rect>
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-8" fill="#1f77b4" height="1" style="fill: url(#regular-gradient)" tabindex="0" transform="translate(345.25555555555553,0)" width="38.6" x="0" y="164"></rect>
+</g>
+</g>
+</g>
+</g>
+<g class="nv-linesWrap nvd3-svg">
+<g class="nvd3 nv-wrap nv-line" transform="translate(0,0)">
+<defs>
+<clippath id="nv-edge-clip-86824">
+<rect height="165" width="386"></rect>
+</clippath>
+</defs>
+<g clip-path>
+<g class="nv-groups">
+<g class="no-budget nv-group nv-series-0" style="stroke-opacity: 1; stroke-width: 1.5; fill-opacity: 0.5; fill: rgb(31, 119, 180); stroke: rgb(31, 119, 180);">
+<path class="nv-line"></path>
+</g>
+</g>
+<g class="nv-scatterWrap nvd3-svg" clip-path>
+<g class="nvd3 nv-wrap nv-scatter nv-chart-86824" transform="translate(0,0)">
+<defs>
+<clippath id="nv-edge-clip-86824">
+<rect height="165" width="386"></rect>
+</clippath>
+</defs>
+<g clip-path>
+<g class="nv-groups">
+<g class="nv-group nv-series-0" style="stroke-opacity: 1; fill-opacity: 0.5; stroke: rgb(31, 119, 180); fill: rgb(31, 119, 180);"></g>
+</g>
+<g class="nv-point-paths"></g>
+</g>
+<g class="nv-point-clips"></g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg> </div>
+</div>
+<div class="totalSpending barThree">
+<h2 class="ng-binding" style="font-size:16px;font-family:'PNC Sans';text-transform:uppercase">Auto Spending</h2>
+<div class="spendingHistory"><svg class="nvd3-svg" height="220" width="430">
+<defs>
+<lineargradient id="regular-gradient" x1="0" x2="0" y1="0" y2="1">
+<stop class="regular-gradient-0" offset="0%"></stop>
+<stop class="regular-gradient-100" offset="100%"></stop>
+</lineargradient>
+<lineargradient id="active-gradient" x1="0" x2="0" y1="0" y2="1">
+<stop class="active-gradient-0" offset="0%"></stop>
+<stop class="active-gradient-100" offset="100%"></stop>
+</lineargradient>
+</defs>
+<g class="nvd3 nv-wrap nv-barWithLine" transform="translate(30,20)">
+<g>
+<g class="nv-focus">
+<g class="nv-x nv-axis nvd3-svg" transform="translate(0,165)">
+<g class="nvd3 nv-wrap nv-axis">
+<g>
+<g class="tick" style="opacity: 1;" transform="translate(21.11111111111111,0)">
+<line x2="0" y2="-165"></line>
+<text dy=".71em" style="text-anchor: middle;" x="0" y="5">
+<tspan>Nov</tspan>
+<tspan dy="15" x="0">2015</tspan>
+</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(63.33333333333333,0)">
+<line x2="0" y2="-165"></line>
+<text class="active" dy=".71em" style="text-anchor: middle;" x="0" y="5">Dec</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(105.55555555555556,0)">
+<line x2="0" y2="-165"></line>
+<text dy=".71em" style="text-anchor: middle;" x="0" y="5">
+<tspan>Jan</tspan>
+<tspan dy="15" x="0">2016</tspan>
+</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(147.77777777777777,0)">
+<line x2="0" y2="-165"></line>
+<text dy=".71em" style="text-anchor: middle;" x="0" y="5">Feb</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(190,0)">
+<line x2="0" y2="-165"></line>
+<text dy=".71em" style="text-anchor: middle;" x="0" y="5">Mar</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(232.22222222222223,0)">
+<line x2="0" y2="-165"></line>
+<text dy=".71em" style="text-anchor: middle;" x="0" y="5">Apr</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(274.44444444444446,0)">
+<line x2="0" y2="-165"></line>
+<text dy=".71em" style="text-anchor: middle;" x="0" y="5">May</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(316.6666666666667,0)">
+<line x2="0" y2="-165"></line>
+<text dy=".71em" style="text-anchor: middle;" x="0" y="5">Jun</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(358.88888888888886,0)">
+<line x2="0" y2="-165"></line>
+<text dy=".71em" style="text-anchor: middle;" x="0" y="5">Jul</text>
+</g>
+<path class="domain" d="M0,0V0H380V0"></path>
+<text class="nv-axislabel" text-anchor="middle" x="190" y="36"></text>
+</g>
+</g>
+</g>
+<g class="nv-y nv-axis nvd3-svg" style="opacity: 1;">
+<g class="nvd3 nv-wrap nv-axis">
+<g>
+<g class="tick zero" style="opacity: 1;" transform="translate(0,165)">
+<line x2="380" y2="0"></line>
+<text dy=".32em" opacity="0" style="text-anchor: end;" x="-3" y="0">$0</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(0,132)">
+<line x2="380" y2="0"></line>
+<text dy=".32em" opacity="1" style="text-anchor: end;" x="-3" y="0">$50</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(0,99)">
+<line x2="380" y2="0"></line>
+<text dy=".32em" opacity="1" style="text-anchor: end;" x="-3" y="0">$100</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(0,66)">
+<line x2="380" y2="0"></line>
+<text dy=".32em" opacity="1" style="text-anchor: end;" x="-3" y="0">$150</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(0,32.99999999999999)">
+<line x2="380" y2="0"></line>
+<text dy=".32em" opacity="1" style="text-anchor: end;" x="-3" y="0">$200</text>
+</g>
+<g class="tick" opacity="0" style="opacity: 1;" transform="translate(0,0)">
+<line x2="380" y2="0"></line>
+<text dy=".32em" opacity="0" style="text-anchor: end;" x="-3" y="0">$250</text>
+</g>
+<path class="domain" d="M0,0H0V165H0"></path>
+<text class="nv-axislabel" style="text-anchor: middle;" transform="rotate(-90)" x="-82.5" y="-50"></text>
+</g>
+<g class="nv-axisMaxMin nv-axisMaxMin-y nv-axisMin-y" transform="translate(0,165)">
+<text dy=".32em" style="opacity: 1;" text-anchor="end" x="-3" y="0">$0</text>
+</g>
+<g class="nv-axisMaxMin nv-axisMaxMin-y nv-axisMax-y" transform="translate(0,0)">
+<text dy=".32em" style="opacity: 1;" text-anchor="end" x="-3" y="0">$250</text>
+</g>
+</g>
+</g>
+<g class="nv-areaWrap nvd3-svg">
+<g class="nvd3 nv-wrap nv-line" transform="translate(0,0)">
+<defs>
+<clippath id="nv-edge-clip-7669">
+<rect height="165" width="380"></rect>
+</clippath>
+</defs>
+<g clip-path>
+<g class="nv-groups">
+<g class=" nv-group nv-series-0" style="stroke-opacity: 1; stroke-width: 1.5; fill-opacity: 1e-06; fill: rgb(31, 119, 180); stroke: rgb(31, 119, 180);"></g>
+</g>
+</g>
+</g>
+</g>
+<g class="nv-barsWrap nvd3-svg">
+<g class="nvd3 nv-wrap nv-historicalBar-5668" transform="translate(0,0)">
+<defs>
+<clippath id="nv-chart-clip-path-5668">
+<rect height="165" width="380"></rect>
+</clippath>
+</defs>
+<g clip-path="url(#nv-chart-clip-path-5668)">
+<g class="nv-bars">
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-0" fill="#1f77b4" height="1" style="fill: url(#regular-gradient)" tabindex="0" transform="translate(2.1111111111111107,0)" width="38" x="0" y="164"></rect>
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-1" fill="#1f77b4" height="1" style="fill: url(#active-gradient)" tabindex="0" transform="translate(44.33333333333333,0)" width="38" x="0" y="164"></rect>
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-2" fill="#1f77b4" height="1" style="fill: url(#regular-gradient)" tabindex="0" transform="translate(86.55555555555556,0)" width="38" x="0" y="164"></rect>
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-3" fill="#1f77b4" height="59.574899999999985" style="fill: url(#regular-gradient)" tabindex="0" transform="translate(128.77777777777777,0)" width="38" x="0" y="105.42510000000001"></rect>
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-4" fill="#1f77b4" height="85" style="fill: url(#regular-gradient)" tabindex="0" transform="translate(171,0)" width="38" x="0" y="80.9574"></rect>
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-5" fill="url(#active-gradient);" height="133.87439999999998" style="fill: url(#active-gradient)" tabindex="0" transform="translate(213.22222222222223,0)" width="38" x="0" y="31.125600000000006"></rect>
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-6" fill="#1f77b4" height="1" style="fill: url(#regular-gradient)" tabindex="0" transform="translate(255.44444444444446,0)" width="38" x="0" y="164"></rect>
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-7" fill="#1f77b4" height="1" style="fill: url(#regular-gradient)" tabindex="0" transform="translate(297.6666666666667,0)" width="38" x="0" y="164"></rect>
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-8" fill="#1f77b4" height="1" style="fill: url(#regular-gradient)" tabindex="0" transform="translate(339.88888888888886,0)" width="38" x="0" y="164"></rect>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg> </div>
+</div>
+<div class="totalSpending barFour">
+<h2 class="ng-binding" style="font-size:16px;font-family:'PNC Sans';text-transform:uppercase">Grocery Spending</h2>
+<div class="spendingHistory"><svg class="nvd3-svg" height="220" width="430">
+<defs>
+<lineargradient id="regular-gradient" x1="0" x2="0" y1="0" y2="1">
+<stop class="regular-gradient-0" offset="0%"></stop>
+<stop class="regular-gradient-100" offset="100%"></stop>
+</lineargradient>
+<lineargradient id="active-gradient" x1="0" x2="0" y1="0" y2="1">
+<stop class="active-gradient-0" offset="0%"></stop>
+<stop class="active-gradient-100" offset="100%"></stop>
+</lineargradient>
+</defs>
+<g class="nvd3 nv-wrap nv-barWithLine" transform="translate(30,20)">
+<g>
+<g class="nv-focus">
+<g class="nv-x nv-axis nvd3-svg" transform="translate(0,165)">
+<g class="nvd3 nv-wrap nv-axis">
+<g>
+<g class="tick" style="opacity: 1;" transform="translate(21.11111111111111,0)">
+<line x2="0" y2="-165"></line>
+<text dy=".71em" style="text-anchor: middle;" x="0" y="5">
+<tspan>Nov</tspan>
+<tspan dy="15" x="0">2015</tspan>
+</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(63.33333333333333,0)">
+<line x2="0" y2="-165"></line>
+<text class="active" dy=".71em" style="text-anchor: middle;" x="0" y="5">Dec</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(105.55555555555556,0)">
+<line x2="0" y2="-165"></line>
+<text dy=".71em" style="text-anchor: middle;" x="0" y="5">
+<tspan>Jan</tspan>
+<tspan dy="15" x="0">2016</tspan>
+</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(147.77777777777777,0)">
+<line x2="0" y2="-165"></line>
+<text dy=".71em" style="text-anchor: middle;" x="0" y="5">Feb</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(190,0)">
+<line x2="0" y2="-165"></line>
+<text dy=".71em" style="text-anchor: middle;" x="0" y="5">Mar</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(232.22222222222223,0)">
+<line x2="0" y2="-165"></line>
+<text dy=".71em" style="text-anchor: middle;" x="0" y="5">Apr</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(274.44444444444446,0)">
+<line x2="0" y2="-165"></line>
+<text dy=".71em" style="text-anchor: middle;" x="0" y="5">May</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(316.6666666666667,0)">
+<line x2="0" y2="-165"></line>
+<text dy=".71em" style="text-anchor: middle;" x="0" y="5">Jun</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(358.88888888888886,0)">
+<line x2="0" y2="-165"></line>
+<text dy=".71em" style="text-anchor: middle;" x="0" y="5">Jul</text>
+</g>
+<path class="domain" d="M0,0V0H380V0"></path>
+<text class="nv-axislabel" text-anchor="middle" x="190" y="36"></text>
+</g>
+</g>
+</g>
+<g class="nv-y nv-axis nvd3-svg" style="opacity: 1;">
+<g class="nvd3 nv-wrap nv-axis">
+<g>
+<g class="tick zero" style="opacity: 1;" transform="translate(0,165)">
+<line x2="380" y2="0"></line>
+<text dy=".32em" opacity="0" style="text-anchor: end;" x="-3" y="0">$0</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(0,132)">
+<line x2="380" y2="0"></line>
+<text dy=".32em" opacity="1" style="text-anchor: end;" x="-3" y="0">$50</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(0,99)">
+<line x2="380" y2="0"></line>
+<text dy=".32em" opacity="1" style="text-anchor: end;" x="-3" y="0">$100</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(0,66)">
+<line x2="380" y2="0"></line>
+<text dy=".32em" opacity="1" style="text-anchor: end;" x="-3" y="0">$150</text>
+</g>
+<g class="tick" style="opacity: 1;" transform="translate(0,32.99999999999999)">
+<line x2="380" y2="0"></line>
+<text dy=".32em" opacity="1" style="text-anchor: end;" x="-3" y="0">$200</text>
+</g>
+<g class="tick" opacity="0" style="opacity: 1;" transform="translate(0,0)">
+<line x2="380" y2="0"></line>
+<text dy=".32em" opacity="0" style="text-anchor: end;" x="-3" y="0">$250</text>
+</g>
+<path class="domain" d="M0,0H0V165H0"></path>
+<text class="nv-axislabel" style="text-anchor: middle;" transform="rotate(-90)" x="-82.5" y="-50"></text>
+</g>
+<g class="nv-axisMaxMin nv-axisMaxMin-y nv-axisMin-y" transform="translate(0,165)">
+<text dy=".32em" style="opacity: 1;" text-anchor="end" x="-3" y="0">$0</text>
+</g>
+<g class="nv-axisMaxMin nv-axisMaxMin-y nv-axisMax-y" transform="translate(0,0)">
+<text dy=".32em" style="opacity: 1;" text-anchor="end" x="-3" y="0">$250</text>
+</g>
+</g>
+</g>
+<g class="nv-areaWrap nvd3-svg">
+<g class="nvd3 nv-wrap nv-line" transform="translate(0,0)">
+<defs>
+<clippath id="nv-edge-clip-7669">
+<rect height="165" width="380"></rect>
+</clippath>
+</defs>
+<g clip-path>
+<g class="nv-groups">
+<g class=" nv-group nv-series-0" style="stroke-opacity: 1; stroke-width: 1.5; fill-opacity: 1e-06; fill: rgb(31, 119, 180); stroke: rgb(31, 119, 180);"></g>
+</g>
+</g>
+</g>
+</g>
+<g class="nv-barsWrap nvd3-svg">
+<g class="nvd3 nv-wrap nv-historicalBar-5668" transform="translate(0,0)">
+<defs>
+<clippath id="nv-chart-clip-path-5668">
+<rect height="165" width="380"></rect>
+</clippath>
+</defs>
+<g clip-path="url(#nv-chart-clip-path-5668)">
+<g class="nv-bars">
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-0" fill="#1f77b4" height="1" style="fill: url(#regular-gradient)" tabindex="0" transform="translate(2.1111111111111107,0)" width="38" x="0" y="164"></rect>
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-1" fill="#1f77b4" height="1" style="fill: url(#active-gradient)" tabindex="0" transform="translate(44.33333333333333,0)" width="38" x="0" y="164"></rect>
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-2" fill="#1f77b4" height="1" style="fill: url(#regular-gradient)" tabindex="0" transform="translate(86.55555555555556,0)" width="38" x="0" y="164"></rect>
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-3" fill="#1f77b4" height="59.574899999999985" style="fill: url(#regular-gradient)" tabindex="0" transform="translate(128.77777777777777,0)" width="38" x="0" y="105.42510000000001"></rect>
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-4" fill="#1f77b4" height="69.0426" style="fill: url(#regular-gradient)" tabindex="0" transform="translate(171,0)" width="38" x="0" y="95.9574"></rect>
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-5" fill="url(#active-gradient);" height="115.87439999999998" style="fill: url(#active-gradient)" tabindex="0" transform="translate(213.22222222222223,0)" width="38" x="0" y="56.125600000000006"></rect>
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-6" fill="#1f77b4" height="1" style="fill: url(#regular-gradient)" tabindex="0" transform="translate(255.44444444444446,0)" width="38" x="0" y="164"></rect>
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-7" fill="#1f77b4" height="1" style="fill: url(#regular-gradient)" tabindex="0" transform="translate(297.6666666666667,0)" width="38" x="0" y="164"></rect>
+<rect aria-label="Change Month" class="nv-bar positive nv-bar-0-8" fill="#1f77b4" height="1" style="fill: url(#regular-gradient)" tabindex="0" transform="translate(339.88888888888886,0)" width="38" x="0" y="164"></rect>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg> </div>
+</div>
+<script src="js/jquery-2.0.0.min.js"></script>
+<script>
+        var $growerDiv = "<div class='growbar'><\/div>";
+        var bankText = "<h3>Service Charges + Fees<\/h3><p>$44<\/p>";
+        var billText = "<h3>Credit Card Payments<\/h3><p>$350<\/p>";
+        var autoText = "<h3>Car Payment<\/h3><p>$205<\/p>";
+        var groceryText = "<h3>Grocery Payments<\/h3><p>$165<\/p>";
+        $('.bar').on("click", function(){
+            $('.active').removeClass("active careted");
+            $(this).addClass("active");
+            $('.growbar').remove();
+            $('.main-content').append($growerDiv);
+            $('.bar').not($('.active')).addClass("off");
+                if ($('.active').hasClass("off")){
+                    $('.active').removeClass("off");
+                }
+            var bg = window.getComputedStyle($(this)[0]).getPropertyValue("background")//set the bar to correct color
+            $('.growbar').css("background",bg).animate({"width":"100%"},700,textAndCharts);
+            function textAndCharts(){
+                var bar = $('.active')[0].classList.toString().replace("bar","").split(" ")[0];
+                switch(bar) {
+                    case "firstBar":
+                        $('.growbar').html(bankText);
+                        $('.totalSpending').hide();
+                        $('.barOne').show();
+                        break;
+                    case "secondBar":
+                        $('.growbar').html(billText);
+                        $('.totalSpending').hide();
+                        $('.barTwo').show();
+                        break;
+                    case "thirdBar":
+                        $('.growbar').html(autoText);
+                        $('.totalSpending').hide();
+                        $('.barThree').show();
+                        break;
+                    case "fourthBar":
+                        $('.growbar').html(groceryText);
+                        $('.totalSpending').hide();
+                        $('.barFour').show();
+                        break;
+                }
+                $('.active').addClass('careted')
+            }
+    });
+</script>
+</body>
+</html>
