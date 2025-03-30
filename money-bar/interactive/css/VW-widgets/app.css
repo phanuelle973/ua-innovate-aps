@@ -3048,7 +3048,7 @@ hr.budgetAlertsHR {
     z-index: 0;
     top: 0;
     min-width: 30px;
-    height: 50px;
+    height: 70px;
     box-sizing: content-box;
 }
 
@@ -3107,7 +3107,7 @@ hr.budgetAlertsHR {
     background: url('../../img/orangeStripes2.png') repeat top left;
     background: url('../../img/orangeStripes2.png') repeat top left, linear-gradient(to bottom, #eba835 0, #e76f32 100%);
     /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eba835', endColorstr='#e76f32', GradientType=0); */
-    height: 62px;
+    height: 50px;
     border-radius: 40px 0 0 40px;
     position: absolute;
     top: 0;
