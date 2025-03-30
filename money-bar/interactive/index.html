@@ -281,13 +281,21 @@
     </div>
 
     <div class="bubble" data-text="2">
+        Lockbox funds are restricted — great for savings goals or preventing impulse spending.
+        <br>
+        <br>
+        <br>
+        <span></span>
+    </div>
+
+    <div class="bubble" data-text="3">
         See how much you have Free after your bills are accounted for
         <br>
         <br><br>
         <span></span>
     </div>
 
-    <div class="bubble" data-text="3">
+    <div class="bubble" data-text="4">
         Keep tabs on your Reserve Wish List total in your Savings List
         <span></span>
     </div>
@@ -323,6 +331,10 @@
                 }
                 //stop the slider from going into the Scheduled Out area
                 if (ui.value < 19.05) {
+                    return false;
+                }
+                // Prevent dragging into Lockbox (example range: 19%–35%)
+                if (ui.value >= 19.05 && ui.value < 35) {
                     return false;
                 }
             },
