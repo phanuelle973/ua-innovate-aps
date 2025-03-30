@@ -2980,7 +2980,7 @@ hr.budgetAlertsHR {
     text-align: left !important;
     position: absolute;
     right: 0;
-    min-width: 90px;
+    min-width: 75px;
 }
 
 .moneyBarContainer .moneybar-tabs .tabs .lockboxTab {
