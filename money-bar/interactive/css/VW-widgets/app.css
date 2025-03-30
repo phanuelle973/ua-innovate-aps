@@ -2950,6 +2950,7 @@ hr.budgetAlertsHR {
 .moneyBarContainer .moneybar-tabs .tabs {
     color: #fff;
     z-index: 0;
+    right: 10;
     position: relative;
 }
 
