@@ -3113,7 +3113,7 @@ hr.budgetAlertsHR {
     top: 0;
     left: 0;
     background-size: cover;
-    background-repeat: repeat;
+    background-image: repeat;
 }
 
 .moneyBarContainer .ui-slider .lockbox {
