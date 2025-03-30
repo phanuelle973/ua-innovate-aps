@@ -676,6 +676,62 @@
         </div>
 
     </section>
+    <section>
+        <div class="demo">
+            <div id="ai-buttons" style="text-align: center; margin-top: 40px;">
+                <button class="ai-btn" onclick="showInsights()">Identify Problem Areas</button>
+                <button class="ai-btn" onclick="showPurchaseEvaluator()">Analyze Specific Purchase</button>
+                <label class="switch">
+                    <input type="checkbox" id="budgetToggle" onchange="toggleBudgetSurvey()">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <div id="insights" class="hidden">
+                <h3>Personalized Spending Insights</h3>
+                <ul>
+                    <li><strong>Bills:</strong> Consider lowering costs by negotiating utility rates or canceling unused
+                        subscriptions</li>
+                    <li><strong>Auto:</strong> Save by exploring carpooling, ride-sharing, or using public transit when
+                        possible</li>
+                    <li><strong>Groceries:</strong> Spending more than average, try implementing a meal plan</li>
+                    <li><strong>Entertainment:</strong> Great job, you've balanced entertainment well</li>
+                </ul>
+                <em>*These are AI-driven insights tailored to individual spending problem areas*</em>
+            </div>
+
+            <div id="purchase-evaluator" class="hidden">
+                <h3>Purchase Evaluation</h3>
+                <label>Do I really need this item?</label>
+                <select>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select><br>
+                <label>Will this item help me achieve my financial goals?</label>
+                <select>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select><br>
+                <label>Is there a cheaper alternative?</label>
+                <select>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select><br>
+                <p>Can I afford it? <em>*Auto-filled</em></p>
+                <button class="ai-btn">Get Recommendation</button>
+            </div>
+
+            <div id="budget-survey" class="hidden">
+                <h3>Budget Survey</h3>
+                <input type="text" placeholder="Monthly Income"><br>
+                <input type="text" placeholder="Rent"><br>
+                <input type="text" placeholder="Groceries"><br>
+                <input type="text" placeholder="Loan Payments"><br>
+                <input type="text" placeholder="Debt Payments"><br>
+                <button class="ai-btn" style="background-color:#005fa2;">Create Budget</button>
+            </div>
+        </div>
+    </section>
     <hr>
     <div class="disclaimer">
         <h3>Important Legal
@@ -749,6 +805,23 @@
     <div id="loom-companion-mv3" ext-id="liecbddmkiiihnedobmlmillhodjkdmb">
         <div id="shadow-host-companion"></div>
     </div>
+    <script>
+        function showInsights() {
+          document.getElementById('insights').classList.remove('hidden');
+          document.getElementById('purchase-evaluator').classList.add('hidden');
+        }
+      
+        function showPurchaseEvaluator() {
+          document.getElementById('purchase-evaluator').classList.remove('hidden');
+          document.getElementById('insights').classList.add('hidden');
+        }
+      
+        function toggleBudgetSurvey() {
+          const budgetSection = document.getElementById('budget-survey');
+          budgetSection.classList.toggle('hidden');
+        }
+      </script>
+      
 </body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
 
 </html>
