@@ -674,63 +674,265 @@
                 </iframe>
             </div>
         </div>
+        <style>
+            button {
+                padding: 10px 20px;
+                margin: 10px;
+                border: none;
+                border-radius: 5px;
+                background-color: #f57c00;
+                color: white;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: #ef6c00;
+            }
+
+            #survey,
+            #purchaseQuestions,
+            #aiOutput {
+                margin-top: 20px;
+                padding: 15px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+
+            label,
+            p {
+                margin-top: 8px;
+            }
+
+            input,
+            select {
+                margin-top: 4px;
+                display: block;
+            }
+
+            /* Toggle switch styling */
+            .switch {
+                position: relative;
+                display: inline-block;
+                width: 50px;
+                height: 25px;
+                margin: 10px;
+            }
+
+            .switch input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+
+            .slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #ccc;
+                transition: 0.4s;
+                border-radius: 25px;
+            }
+
+            .slider:before {
+                position: absolute;
+                content: "";
+                height: 18px;
+                width: 18px;
+                left: 4px;
+                bottom: 3.5px;
+                background-color: white;
+                transition: 0.4s;
+                border-radius: 50%;
+            }
+
+            input:checked+.slider {
+                background-color: #0069AA;
+            }
+
+            input:checked+.slider:before {
+                transform: translateX(24px);
+            }
+
+            /* Body padding and font styling */
+            body {
+                padding: 40px;
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+                color: #333;
+            }
+
+            h3 {
+                font-size: 24px;
+                font-weight: bold;
+                color: #0069AA;
+                /* Updated to the blue color from the toggle */
+            }
+
+            /* Added style for forms and additional UI elements */
+            #purchaseQuestions h3,
+            #budgetSurvey h3,
+            #budgetDisplay h3 {
+                color: #0069AA;
+                /* Blue color */
+            }
+        </style>
 
     </section>
     <section>
-        <div class="demo">
-            <div id="ai-buttons" style="text-align: center; margin-top: 40px;">
-                <button class="ai-btn" onclick="showInsights()">Identify Problem Areas</button>
-                <button class="ai-btn" onclick="showPurchaseEvaluator()">Analyze Specific Purchase</button>
-                <label class="switch">
-                    <input type="checkbox" id="budgetToggle" onchange="toggleBudgetSurvey()">
-                    <span class="slider round"></span>
-                </label>
-            </div>
+        <!-- Buttons -->
+        <button onclick="showInsights()">Identify Problem Areas</button>
+        <button onclick="showPurchaseQuestions()">Analyze Specific Purchase</button>
 
-            <div id="insights" class="hidden">
+        <!-- Placeholder divs -->
+        <div id="survey" style="display:none;"></div>
+
+        <div id="purchaseQuestions" style="display:none;">
+            <h3>Purchase Evaluation</h3>
+            <form id="purchaseForm">
+                <p>Do I really need this item?</p>
+                <select id="q1">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+
+                <p>Will this item help me achieve my financial goals?</p>
+                <select id="q2">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+
+                <p>Is there a cheaper alternative?</p>
+                <select id="q3">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+
+                <p>Can I afford it? *Auto-filled</p>
+                <span id="aiAffordResult"></span>
+
+                <button type="button" onclick="evaluatePurchase()">Get Recommendation</button>
+            </form>
+        </div>
+
+        <!-- AI Output -->
+        <div id="aiOutput" style="display:none;"></div>
+
+        <script>
+            function showInsights() {
+                document.getElementById('survey').style.display = 'none';
+                document.getElementById('purchaseQuestions').style.display = 'none';
+
+                const message = `
                 <h3>Personalized Spending Insights</h3>
                 <ul>
-                    <li><strong>Bills:</strong> Consider lowering costs by negotiating utility rates or canceling unused
-                        subscriptions</li>
-                    <li><strong>Auto:</strong> Save by exploring carpooling, ride-sharing, or using public transit when
-                        possible</li>
-                    <li><strong>Groceries:</strong> Spending more than average, try implementing a meal plan</li>
-                    <li><strong>Entertainment:</strong> Great job, you've balanced entertainment well</li>
+                    <li><b>Bills</b>: Consider lowering costs by negotiating utility rates or canceling unused subscriptions</li>
+                    <li><b>Auto</b>: Save by exploring carpooling, ride-sharing, or using public transit when possible</li>
+                    <li><b>Groceries</b>: Spending more than average, try implementing a meal plan</li>
+                    <li><b>Entertainment</b>: Great job, you've balanced entertainment well</li>
                 </ul>
-                <em>*These are AI-driven insights tailored to individual spending problem areas*</em>
-            </div>
+                <p><i>*These are AI-driven insights tailored to individual spending problem areas*</i></p>
+            `;
 
-            <div id="purchase-evaluator" class="hidden">
-                <h3>Purchase Evaluation</h3>
-                <label>Do I really need this item?</label>
-                <select>
-                    <option>Yes</option>
-                    <option>No</option>
-                </select><br>
-                <label>Will this item help me achieve my financial goals?</label>
-                <select>
-                    <option>Yes</option>
-                    <option>No</option>
-                </select><br>
-                <label>Is there a cheaper alternative?</label>
-                <select>
-                    <option>Yes</option>
-                    <option>No</option>
-                </select><br>
-                <p>Can I afford it? <em>*Auto-filled</em></p>
-                <button class="ai-btn">Get Recommendation</button>
-            </div>
+                document.getElementById('aiOutput').innerHTML = message;
+                document.getElementById('aiOutput').style.display = 'block';
+            }
 
-            <div id="budget-survey" class="hidden">
-                <h3>Budget Survey</h3>
-                <input type="text" placeholder="Monthly Income"><br>
-                <input type="text" placeholder="Rent"><br>
-                <input type="text" placeholder="Groceries"><br>
-                <input type="text" placeholder="Loan Payments"><br>
-                <input type="text" placeholder="Debt Payments"><br>
-                <button class="ai-btn" style="background-color:#005fa2;">Create Budget</button>
+            function showPurchaseQuestions() {
+                document.getElementById('survey').style.display = 'none';
+                document.getElementById('purchaseQuestions').style.display = 'block';
+                document.getElementById('aiOutput').style.display = 'none';
+
+                const totalBudget = 764;
+                const randomExpense = 200;
+
+                document.getElementById('aiAffordResult').dataset.answer = (randomExpense < totalBudget * 0.1) ? "yes" : "no";
+            }
+
+            function evaluatePurchase() {
+                let yesCount = 0;
+                let totalQuestions = 4;
+
+                if (document.getElementById('q1').value === "yes") yesCount++;
+                if (document.getElementById('q2').value === "yes") yesCount++;
+                if (document.getElementById('aiAffordResult').dataset.answer === "yes") yesCount++;
+                if (document.getElementById('q3').value === "no") yesCount++;
+
+                const percentage = (yesCount / totalQuestions) * 100;
+
+                let recommendation = "";
+                if (percentage >= 75) {
+                    recommendation = "Recommended ✅";
+                } else if (percentage >= 50) {
+                    recommendation = "Think twice 🤔";
+                } else {
+                    recommendation = "Not Recommended 🚩";
+                }
+
+                document.getElementById('aiOutput').innerHTML = `<h3>Purchase Verdict</h3><p>Score: ${percentage}% - ${recommendation}</p>`;
+                document.getElementById('aiOutput').style.display = 'block';
+            }
+        </script>
+
+        <!-- Toggle Switch for Budget Survey -->
+        <label class="switch">
+            <input type="checkbox" id="budgetSurveyToggle" onclick="toggleBudgetSurvey()">
+            <span class="slider"></span>
+        </label>
+
+        <!-- Budget Survey Form (Initially Hidden) -->
+        <div id="budgetSurvey"
+            style="display:none; padding: 20px; background-color: #f4f4f4; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 350px; margin-top: 20px;">
+            <h3 style="color: #0069AA; font-size: 24px; text-align: center;">Budget Survey</h3>
+            <label for="income" style="font-weight: bold;">Monthly Income:</label>
+            <input type="number" id="income" placeholder="Enter income"
+                style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px;"><br>
+
+            <label for="rent" style="font-weight: bold;">Rent:</label>
+            <input type="number" id="rent" placeholder="Enter rent"
+                style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px;"><br>
+
+            <label for="groceries" style="font-weight: bold;">Groceries:</label>
+            <input type="number" id="groceries" placeholder="Enter groceries"
+                style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px;"><br>
+
+            <label for="loanPayments" style="font-weight: bold;">Loan Payments:</label>
+            <input type="number" id="loanPayments" placeholder="Enter loan payments"
+                style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px;"><br>
+
+            <label for="debt" style="font-weight: bold;">Debt Payments:</label>
+            <input type="number" id="debt" placeholder="Enter debt payments"
+                style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px;"><br>
+
+            <button onclick="createBudget()"
+                style="background-color: #0069AA; color: white; padding: 10px 15px; width: 100%; border: none; border-radius: 5px; font-size: 18px; cursor: pointer; margin-top: 10px;">Create
+                Budget</button>
+        </div>
+
+        <!-- Display Budget (Initially Hidden) -->
+        <div id="budgetDisplay"
+            style="display:none; padding: 20px; background-color: #f4f4f4; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 350px; margin-top: 20px;">
+            <h3 style="color: #0069AA; font-size: 24px; text-align: center;">Your Monthly Budget</h3>
+            <div id="budgetDetails" style="font-size: 16px; color: #333; margin-bottom: 20px;"></div>
+
+            <!-- Apply Budget Button (Appears after Budget is Generated) -->
+            <div id="applyBudgetButton" style="display:none;">
+                <button onclick="applyBudget()"
+                    style="background-color: #0069AA; color: white; padding: 10px 15px; width: 100%; border: none; border-radius: 5px; font-size: 18px; cursor: pointer; margin-top: 10px;">Apply
+                    Budget to Virtual Wallet</button>
             </div>
         </div>
+
+        <!-- Pop-up to Confirm Budget Applied (Initially Hidden) -->
+        <div id="popup"
+            style="display:none; padding: 20px; background-color: #f57c00; color: white; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 350px; margin-top: 20px; text-align: center;">
+            <p style="font-size: 18px; font-weight: bold;">BUDGET ADDED</p>
+            <button onclick="closePopup()"
+                style="background-color: white; color: #f57c00; padding: 10px 15px; border: none; border-radius: 5px; font-size: 18px; cursor: pointer; margin-top: 10px;">Close</button>
+        </div>
+
     </section>
     <hr>
     <div class="disclaimer">
@@ -806,22 +1008,71 @@
         <div id="shadow-host-companion"></div>
     </div>
     <script>
-        function showInsights() {
-          document.getElementById('insights').classList.remove('hidden');
-          document.getElementById('purchase-evaluator').classList.add('hidden');
-        }
-      
-        function showPurchaseEvaluator() {
-          document.getElementById('purchase-evaluator').classList.remove('hidden');
-          document.getElementById('insights').classList.add('hidden');
-        }
-      
+        // Toggle Budget Survey Display
         function toggleBudgetSurvey() {
-          const budgetSection = document.getElementById('budget-survey');
-          budgetSection.classList.toggle('hidden');
+            const isChecked = document.getElementById('budgetSurveyToggle').checked;
+            const budgetSurvey = document.getElementById('budgetSurvey');
+            const budgetDisplay = document.getElementById('budgetDisplay');
+            const applyBudgetButton = document.getElementById('applyBudgetButton');
+
+            if (isChecked) {
+                budgetSurvey.style.display = 'block';
+                budgetDisplay.style.display = 'none';
+            } else {
+                budgetSurvey.style.display = 'none';
+                budgetDisplay.style.display = 'none';
+                applyBudgetButton.style.display = 'none';
+            }
         }
-      </script>
-      
+
+        // Create Budget Function
+        function createBudget() {
+            const income = parseFloat(document.getElementById('income').value);
+            const rent = parseFloat(document.getElementById('rent').value);
+            const groceries = parseFloat(document.getElementById('groceries').value);
+            const loanPayments = parseFloat(document.getElementById('loanPayments').value);
+            const debt = parseFloat(document.getElementById('debt').value);
+
+            // Total of Unavoidable Expenditures (Rent, Groceries, Loan Payments, Debt)
+            const totalUnavoidableExpenditures = rent + groceries + loanPayments + debt;
+
+            // Calculating Needs and Budget Categories
+            const totalBudget = income;
+            const needsBudget = totalBudget * 0.50; // 50% of income for Needs
+            const savings = totalBudget * 0.20; // 20% of income for Savings
+            const wants = totalBudget * 0.30; // 30% of income for Wants
+
+            // Format and Display the Budget
+            const budgetDetails = `
+                <p><strong>Monthly Income:</strong> $${income.toFixed(2)}</p>
+                <p><strong>Rent:</strong> $${rent.toFixed(2)}</p>
+                <p><strong>Groceries:</strong> $${groceries.toFixed(2)}</p>
+                <p><strong>Loan Payments:</strong> $${loanPayments.toFixed(2)}</p>
+                <p><strong>Debt Payments:</strong> $${debt.toFixed(2)}</p>
+                <p><strong>Total Unavoidable Expenditures:</strong> $${totalUnavoidableExpenditures.toFixed(2)}</p>
+                <hr>
+                <p><strong>Needs:</strong> Using $${totalUnavoidableExpenditures.toFixed(2)} out of $${needsBudget.toFixed(2)}</p>
+
+                <p><strong>Savings:</strong> $${savings.toFixed(2)}</p>
+                <p><strong>Wants:</strong> $${wants.toFixed(2)}</p>
+            `;
+
+            document.getElementById('budgetDetails').innerHTML = budgetDetails;
+            document.getElementById('budgetDisplay').style.display = 'block';
+            document.getElementById('applyBudgetButton').style.display = 'block';
+        }
+
+        // Apply Budget Function
+        function applyBudget() {
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        // Close Pop-up
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+
 </body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
 
 </html>
