@@ -3138,7 +3138,7 @@ hr.budgetAlertsHR {
     background-position: center center;
     background-size: cover; /* or contain, depending on your goal */
     /* border-radius: 0 10px 10px 0; if you're trying to round edges */
-    /* background-image: url('../../img/redStripes2.png'); or whatever you named it */
+    background-image: url('../../img/redStripes2.png'); 
     background-size: contain;
     background-repeat: repeat;
 }
