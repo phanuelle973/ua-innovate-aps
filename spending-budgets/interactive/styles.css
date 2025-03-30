@@ -40,7 +40,7 @@ body {
 	justify-content: space-between; /* or space-evenly */
 	align-items: center;
 	flex-wrap: nowrap;
-	padding: 20px 0;
+	/* padding: 20px 0; */
   }
 
 p {
