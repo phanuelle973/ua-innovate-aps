@@ -3405,7 +3405,7 @@ hr.budgetAlertsHR {
 .moneyBarContainer .dangerDayReserve .scheduledOutWraparound {
     border-right: inherit;
     background: #e99e1e;
-    width: calc(100% - 20px) !important;
+    width: calc(100% - 50px) !important;
     border-radius: 40px 0 40px 40px !important;
 }
 
