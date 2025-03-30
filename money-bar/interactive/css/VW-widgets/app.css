@@ -3126,6 +3126,15 @@ hr.budgetAlertsHR {
     left: 0;
 }
 
+.lockbox {
+    background: linear-gradient(to bottom, #b8860b, #8b6914); /* warm gold tone */
+    height: 100%;
+    position: absolute;
+    left: 17.3%; /* match scheduledOut width */
+    z-index: 1;
+}
+
+
 .moneyBarContainer .ui-slider .setAside {
     min-width: 30px;
     background: rgba(0, 0, 0, 0.3);

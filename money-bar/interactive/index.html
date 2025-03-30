@@ -255,8 +255,8 @@
                     <div class="mySlider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
                         <div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min"
                             style="width: 35.2029%;"></div>
-                        <div class="scheduledOut" style="width: 17.3009%;">
-                        </div>
+                        <div class="scheduledOut" style="width: 17.3009%;"></div>
+                        <div class="lockbox" style="width: 17.3009%;"></div>
                         <div class="setAside " ng-style="setAsideWidth"
                             ng-class="{onlyScheduledOutTab:scheduledOutAmount <= 0}"
                             ng-show="!dangerDayReserve &amp;&amp; setAsideAmount > 0" style="width: 47.411%;">
@@ -344,15 +344,13 @@
                     $('.balance').removeClass("stacked")
                 }
                 //stop the slider from going into the Scheduled Out area
-                if (ui.value < 19.05) {
+                if (ui.value < 36.00) {
                     return false;
                 }
                 // Prevent dragging into Lockbox (example range: 19%–35%)
                 if (ui.value >= 19.05 && ui.value < 35) {
                     return false;
                 }
-                if (ui.value < 19.05) return false;            // Block Scheduled Out
-                if (ui.value >= 19.05 && ui.value < 35) return false; // Block Lockbox
 
             },
             stop: function (event, ui) {
