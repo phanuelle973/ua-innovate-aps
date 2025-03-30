@@ -3103,7 +3103,7 @@ hr.budgetAlertsHR {
 
 .moneyBarContainer .ui-slider .scheduledOut {
     min-width: 30px;
-    background-color: #eba835;
+    /* background-color: #eba835; */
     background: url('../../img/orangeStripes2.png') repeat top left;
     background: url('../../img/orangeStripes2.png') repeat top left, linear-gradient(to bottom, #eba835 0, #e76f32 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eba835', endColorstr='#e76f32', GradientType=0);
