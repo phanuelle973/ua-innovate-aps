@@ -2950,7 +2950,6 @@ hr.budgetAlertsHR {
 .moneyBarContainer .moneybar-tabs .tabs {
     color: #fff;
     z-index: 0;
-    right: 30;
     position: relative;
 }
 
@@ -2961,6 +2960,7 @@ hr.budgetAlertsHR {
     padding: 4px 8px;
     border-radius: 8px 8px 0 0;
     font-family: Arial;
+    right: 10;
 }
 
 .moneyBarContainer .moneybar-tabs .tabs .tab div {
