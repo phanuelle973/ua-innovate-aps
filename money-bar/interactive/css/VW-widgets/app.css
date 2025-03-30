@@ -3111,7 +3111,7 @@ hr.budgetAlertsHR {
     border-radius: 40px 0 0 40px;
     position: absolute;
     top: 0;
-    left: 5px;
+    left: 0;
     /* background-size: cover; */
     /* background-image: repeat; */
 }
@@ -3449,7 +3449,7 @@ hr.budgetAlertsHR {
 
 .moneyBarContainer.thin-bar .scheduledOut {
     height: 22px;
-    min-width: 11px !important;
+    min-width: 15px !important;
 }
 
 .moneyBarContainer.thin-bar .setAside {
