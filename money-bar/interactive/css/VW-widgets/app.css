@@ -2981,7 +2981,6 @@ hr.budgetAlertsHR {
     position: absolute;
     right: 0;
     min-width: 75px;
-    height: 50px;
 }
 
 .moneyBarContainer .moneybar-tabs .tabs .lockboxTab {
@@ -3049,7 +3048,7 @@ hr.budgetAlertsHR {
     z-index: 0;
     top: 0;
     min-width: 30px;
-    height: 70px;
+    height: 50px;
     box-sizing: content-box;
 }
 
