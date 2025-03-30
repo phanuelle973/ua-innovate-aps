@@ -389,13 +389,13 @@
                     reserveBal = 0;
                 }
                 //adjust the Savings List amount if reserve is depleted; don't want this to grow past the original amount, though. 2850 is the inital value inherited from VW Angular Demo.
-                if (reserveBal < 2850) {
+                if (reserveBal < 2350) {
                     savings = reserveBal;
                 }
                 else {
                     savings = parseFloat($('.setAsideTab span').html().replace("$", "").replace(",", "")).toFixed(2);
                     if (reserveBal > savings) {
-                        savings = "2,850.00";
+                        savings = "2,350.00";
                     }
                 }
                 spendBal = spendBal + addit;
@@ -437,7 +437,7 @@
                     currFree = currFree.slice(0, 1) + "," + currFree.slice(1);
                 }
                 if (savings.length > 6) {
-                    if (savings != "2,850.00") {
+                    if (savings != "2,350.00") {
                         savings = savings.slice(0, 1) + "," + savings.slice(1);
                     }
                 }
