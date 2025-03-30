@@ -255,6 +255,7 @@ p {
 
 .growbar {
 	position: absolute;
+	top: 185px;
 	bottom: 80px; /* 👈 move it UP above the charts */
 	left: 0;
 	width: 100%;
