@@ -11836,8 +11836,9 @@ nav#VWNav li:nth-of-type(6) {
     color: white;
     text-align: center;
     border-radius: 8px 8px 0 0;
-    z-index: 10;
+    z-index: 2;
     position: relative;
+    margin-top: -10px;
 }
 
 .lockboxTab,
