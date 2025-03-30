@@ -337,6 +337,9 @@
                 if (ui.value >= 19.05 && ui.value < 35) {
                     return false;
                 }
+                if (ui.value < 19.05) return false;            // Block Scheduled Out
+                if (ui.value >= 19.05 && ui.value < 35) return false; // Block Lockbox
+
             },
             stop: function (event, ui) {
                 //these will be set at the time of modal creation
