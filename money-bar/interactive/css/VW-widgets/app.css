@@ -3405,7 +3405,7 @@ hr.budgetAlertsHR {
 .moneyBarContainer .dangerDayReserve .scheduledOutWraparound {
     border-right: inherit;
     background: #e99e1e;
-    width: calc(100% + 50px) !important;
+    width: calc(100% + 10px) !important;
     border-radius: 40px 0 40px 40px !important;
 }
 
@@ -3443,9 +3443,9 @@ hr.budgetAlertsHR {
     border: none;
 }
 
-.moneyBarContainer.thin-bar .ui-slider .ui-slider-handle .sliderArrows {
+/* .moneyBarContainer.thin-bar .ui-slider .ui-slider-handle .sliderArrows {
     display: none;
-}
+} */
 
 .moneyBarContainer.thin-bar .scheduledOut {
     height: 22px;
