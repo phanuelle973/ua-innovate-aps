@@ -3123,7 +3123,7 @@ hr.budgetAlertsHR {
     background: url('../../img/redStripes2.png') repeat top left, linear-gradient(to bottom, #eb4735 0, #e73232 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eb4735', endColorstr='#e73232', GradientType=0);
     height: 62px;
-    /* border-radius: 40px 0 0 40px; */
+    border-radius: 40px 0 0 40px;
     position: absolute;
     top: 0;
     left: 30;
@@ -3137,7 +3137,7 @@ hr.budgetAlertsHR {
     z-index: 1;
     background-position: center center;
     background-size: cover; /* or contain, depending on your goal */
-    /* border-radius: 0 10px 10px 0; if you're trying to round edges */
+    border-radius: 0 10px 10px 0; 
     background-image: url('../../img/redStripes2.png'); 
     background-size: contain;
     background-repeat: repeat;
