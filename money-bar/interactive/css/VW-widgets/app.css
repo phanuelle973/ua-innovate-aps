@@ -3119,6 +3119,7 @@ hr.budgetAlertsHR {
 .moneyBarContainer .ui-slider .lockbox {
     min-width: 30px;
     background-color: #eba835;
+    background-image: url('../../img/redStripes2.png');
     background: url('../../img/redStripes2.png') repeat top left;
     background: url('../../img/redStripes2.png') repeat top left, linear-gradient(to bottom, #eb4735 0, #e73232 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eb4735', endColorstr='#e73232', GradientType=0);
