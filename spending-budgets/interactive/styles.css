@@ -255,10 +255,16 @@ p {
 
 .growbar {
 	position: absolute;
-	top: 185px;
+	bottom: 80px; /* 👈 move it UP above the charts */
 	left: 0;
+	width: 100%;
 	height: 45px;
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.45);
+	z-index: 1000; /* 👈 ensures it floats above everything else */
+	display: flex;
+	align-items: center;
+	padding-left: 30px;
+	background: inherit; /* adopts bar's background (already being set in JS) */
 }
 
 .growbar h3 {
