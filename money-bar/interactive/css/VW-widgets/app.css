@@ -3449,7 +3449,7 @@ hr.budgetAlertsHR {
 
 .moneyBarContainer.thin-bar .scheduledOut {
     height: 22px;
-    min-width: 15px !important;
+    min-width: 11px !important;
 }
 
 .moneyBarContainer.thin-bar .setAside {
