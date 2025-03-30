@@ -37,7 +37,7 @@ body {
 
 	display: flex;
 	width: 100%;
-	justify-content: space-between; /* or space-evenly */
+	/* justify-content: space-between; or space-evenly */
 	align-items: center;
 	flex-wrap: nowrap;
 	/* padding: 20px 0; */
