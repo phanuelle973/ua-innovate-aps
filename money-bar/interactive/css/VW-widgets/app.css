@@ -3132,6 +3132,12 @@ hr.budgetAlertsHR {
     position: absolute;
     left: 17.3%; /* match scheduledOut width */
     z-index: 1;
+    background-position: center center;
+    background-size: cover; /* or contain, depending on your goal */
+    border-radius: 0 10px 10px 0; /* if you're trying to round edges */
+    background-image: url('img/lockboxStripes.png'); /* or whatever you named it */
+    background-size: contain;
+    background-repeat: repeat;
 }
 
 
