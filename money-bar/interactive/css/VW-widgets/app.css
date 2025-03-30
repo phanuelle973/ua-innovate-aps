@@ -11815,12 +11815,12 @@ nav#VWNav li:nth-of-type(6) {
 
 .lockboxTab {
     background: linear-gradient(to bottom, #a53939, #922e2e);
-    color: white;
+    border-radius: 6px 6px 0 0;
     font-weight: bold;
-    border-radius: 5px 5px 0 0;
-    margin-left: 10px;
-  }
-  
+    color: white;
+    text-align: center;
+}
+
 .lockboxWraparound {
 background-color: #a53939;
 opacity: 0.85;
