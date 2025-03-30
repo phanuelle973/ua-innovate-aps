@@ -3117,7 +3117,7 @@ hr.budgetAlertsHR {
 }
 
 .moneyBarContainer .ui-slider .lockbox {
-    min-width: 30px;
+    min-width: 15px;
     background-color: #eba835;
     background-image: url('../../img/redStripes2.png');
     background: url('../../img/redStripes2.png') repeat top left;
