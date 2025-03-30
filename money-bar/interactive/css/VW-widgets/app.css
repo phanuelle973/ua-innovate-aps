@@ -3111,7 +3111,7 @@ hr.budgetAlertsHR {
     border-radius: 40px 0 0 40px;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 5;
     /* background-size: cover; */
     /* background-image: repeat; */
 }
