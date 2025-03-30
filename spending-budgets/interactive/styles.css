@@ -29,12 +29,19 @@ body {
 
 .main-content {
 	padding-top: 20px;
-	width: 95%;
+	/* width: 95%; */
 	height: 300px;
 	position: relative;
 	left: 2.5%;
 	font-family: "PNC Sans";
-}
+
+	display: flex;
+	width: 100%;
+	justify-content: space-between; /* or space-evenly */
+	align-items: center;
+	flex-wrap: nowrap;
+	padding: 20px 0;
+  }
 
 p {
 	font-family: "PNC Sans";
