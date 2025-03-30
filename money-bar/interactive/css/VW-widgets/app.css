@@ -2977,7 +2977,7 @@ hr.budgetAlertsHR {
     background: -webkit-linear-gradient(top, #eaa227 0, #e99e1e 100%);
     background: linear-gradient(to bottom, #eaa227 0, #e99e1e 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eaa227', endColorstr='#e99e1e', GradientType=0);
-    text-align: left;
+    text-align: left !important;
     position: absolute;
     right: 0;
     min-width: 90px;
