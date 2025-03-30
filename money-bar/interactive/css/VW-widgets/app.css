@@ -2955,7 +2955,7 @@ hr.budgetAlertsHR {
 }
 
 .moneyBarContainer .moneybar-tabs .tabs .tab {
-    height: 57px;
+    height: 30px;
     font-weight: bold;
     font-size: .7em;
     padding: 4px 8px;
