@@ -3134,7 +3134,7 @@ hr.budgetAlertsHR {
     background: linear-gradient(to bottom, #b8860b, #8b6914); /* warm gold tone */
     height: 100%;
     position: absolute;
-    left: 20%; /* match scheduledOut width */
+    left: 12%; /* match scheduledOut width */
     z-index: 1;
     background-position: center center;
     background-size: cover; /* or contain, depending on your goal */
