@@ -3119,7 +3119,7 @@ hr.budgetAlertsHR {
 .moneyBarContainer .ui-slider .lockbox {
     min-width: 30px;
     background-color: #eba835;
-    background: url('../../img/redStripes2.png') repeat top left;
+    /* background: url('../../img/redStripes2.png') repeat top left; */
     background: url('../../img/redStripes2.png') repeat top left, linear-gradient(to bottom, #eb4735 0, #e73232 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eb4735', endColorstr='#e73232', GradientType=0);
     height: 62px;
@@ -3138,7 +3138,7 @@ hr.budgetAlertsHR {
     background-position: center center;
     background-size: cover; /* or contain, depending on your goal */
     border-radius: 0 10px 10px 0; 
-    background-image: url('../img/redStripes2.png'); 
+    background-image: url('../../img/redStripes2.png'); 
     background-size: contain;
     background-repeat: repeat;
 }
