@@ -650,13 +650,51 @@
     </div>
     <section>
         <div class="demo">
-            <div class="iframe-wrapper">
-                <h3>See Spending + Budgets in Action</h3>
-                <p>Select a category to view monthly spending history and trends.</p>
-                <iframe scrolling="no" src="interactive/index.html" width="838" height="600" frameborder="0">
-                    <p>Your browser does not support iframes.</p>
-                </iframe>
+            <div class="left-panel">
+                <div class="iframe-wrapper">
+                    <h3>See Spending + Budgets in Action</h3>
+                    <p>Select a category to view monthly spending history and trends.</p>
+                    <iframe scrolling="no" src="interactive/index.html" width="838" height="600" frameborder="0">
+                        <p>Your browser does not support iframes.</p>
+                    </iframe>
+                </div>
             </div>
+            <!-- RIGHT: your buttons -->
+            <div class="right-panel">
+                <button class="ai-btn" onclick="showInsights()">Identify Problem Areas</button>
+                <button class="ai-btn" onclick="showPurchaseEvaluator()">Analyze Purchase</button>
+                <label class="switch">
+                    <input type="checkbox" onchange="toggleBudgetSurvey()">
+                    <span class="slider round"></span>
+                </label>
+
+                <div id="insights" class="hidden">
+                    <h4>Spending Insights</h4>
+                    <ul>
+                        <li><b>Auto:</b> Try carpooling or transit</li>
+                        <li><b>Bills:</b> Consider canceling unused subs</li>
+                    </ul>
+                </div>
+
+                <div id="purchase-evaluator" class="hidden">
+                    <h4>Purchase Evaluation</h4>
+                    <p>Do I really need this?</p>
+                    <select>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                    <button class="ai-btn small">Get Recommendation</button>
+                </div>
+
+                <div id="budget-survey" class="hidden">
+                    <h4>Create Budget</h4>
+                    <input type="text" placeholder="Monthly Income"><br>
+                    <input type="text" placeholder="Rent"><br>
+                    <button class="ai-btn small">Save</button>
+                </div>
+            </div>
+        </div>
+
         </div>
 
     </section>
@@ -730,6 +768,25 @@
             }
         });
     </script>
+    <script>
+        function showInsights() {
+          document.getElementById('insights').classList.remove('hidden');
+          document.getElementById('purchase-evaluator').classList.add('hidden');
+          document.getElementById('budget-survey').classList.add('hidden');
+        }
+      
+        function showPurchaseEvaluator() {
+          document.getElementById('purchase-evaluator').classList.remove('hidden');
+          document.getElementById('insights').classList.add('hidden');
+          document.getElementById('budget-survey').classList.add('hidden');
+        }
+      
+        function toggleBudgetSurvey() {
+          const el = document.getElementById('budget-survey');
+          el.classList.toggle('hidden');
+        }
+      </script>
+      
 </body>
 
 </html>
